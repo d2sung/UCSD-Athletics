@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CE6BD771E0B59F2000D0CCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD761E0B59F2000D0CCE /* main.m */; };
+		8CE6BD7A1E0B59F2000D0CCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD791E0B59F2000D0CCE /* AppDelegate.m */; };
+		8CE6BD7D1E0B59F2000D0CCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD7C1E0B59F2000D0CCE /* ViewController.m */; };
+		8CE6BD801E0B59F2000D0CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6BD7E1E0B59F2000D0CCE /* Main.storyboard */; };
+		8CE6BD821E0B59F2000D0CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6BD811E0B59F2000D0CCE /* Assets.xcassets */; };
+		8CE6BD851E0B59F2000D0CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6BD831E0B59F2000D0CCE /* LaunchScreen.storyboard */; };
+		8CE6BD901E0B59F2000D0CCE /* UCSDAthleticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD8F1E0B59F2000D0CCE /* UCSDAthleticsTests.m */; };
+		8CE6BD9B1E0B59F2000D0CCE /* UCSDAthleticsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD9A1E0B59F2000D0CCE /* UCSDAthleticsUITests.m */; };
+		8CE6BDB31E0B836C000D0CCE /* basketballViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDB21E0B836C000D0CCE /* basketballViewController.m */; };
+		8CE6BDBA1E0B88BC000D0CCE /* playerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDB51E0B88BC000D0CCE /* playerProfile.m */; };
+		8CE6BDBB1E0B88BC000D0CCE /* roster.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDB71E0B88BC000D0CCE /* roster.m */; };
+		8CE6BDBC1E0B88BC000D0CCE /* statsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDB91E0B88BC000D0CCE /* statsParser.m */; };
+		8CE6BDC61E0B98C1000D0CCE /* playerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */; };
+		8CE6BDC91E0BBFBB000D0CCE /* rosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CE6BD8C1E0B59F2000D0CCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CE6BD6A1E0B59F1000D0CCE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CE6BD711E0B59F1000D0CCE;
+			remoteInfo = UCSDAthletics;
+		};
+		8CE6BD971E0B59F2000D0CCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CE6BD6A1E0B59F1000D0CCE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CE6BD711E0B59F1000D0CCE;
+			remoteInfo = UCSDAthletics;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8CE6BD721E0B59F1000D0CCE /* UCSDAthletics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSDAthletics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE6BD761E0B59F2000D0CCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CE6BD781E0B59F2000D0CCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8CE6BD791E0B59F2000D0CCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8CE6BD7B1E0B59F2000D0CCE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8CE6BD7C1E0B59F2000D0CCE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8CE6BD7F1E0B59F2000D0CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CE6BD811E0B59F2000D0CCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CE6BD841E0B59F2000D0CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CE6BD861E0B59F2000D0CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CE6BD8B1E0B59F2000D0CCE /* UCSDAthleticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCSDAthleticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE6BD8F1E0B59F2000D0CCE /* UCSDAthleticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UCSDAthleticsTests.m; sourceTree = "<group>"; };
+		8CE6BD911E0B59F2000D0CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CE6BD961E0B59F2000D0CCE /* UCSDAthleticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCSDAthleticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE6BD9A1E0B59F2000D0CCE /* UCSDAthleticsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UCSDAthleticsUITests.m; sourceTree = "<group>"; };
+		8CE6BD9C1E0B59F2000D0CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CE6BDB11E0B836C000D0CCE /* basketballViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = basketballViewController.h; path = ../basketballViewController.h; sourceTree = "<group>"; };
+		8CE6BDB21E0B836C000D0CCE /* basketballViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = basketballViewController.m; path = ../basketballViewController.m; sourceTree = "<group>"; };
+		8CE6BDB41E0B88BC000D0CCE /* playerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playerProfile.h; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/playerProfile.h; sourceTree = "<group>"; };
+		8CE6BDB51E0B88BC000D0CCE /* playerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = playerProfile.m; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/playerProfile.m; sourceTree = "<group>"; };
+		8CE6BDB61E0B88BC000D0CCE /* roster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = roster.h; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/roster.h; sourceTree = "<group>"; };
+		8CE6BDB71E0B88BC000D0CCE /* roster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = roster.m; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/roster.m; sourceTree = "<group>"; };
+		8CE6BDB81E0B88BC000D0CCE /* statsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = statsParser.h; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/statsParser.h; sourceTree = "<group>"; };
+		8CE6BDB91E0B88BC000D0CCE /* statsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = statsParser.m; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/statsParser.m; sourceTree = "<group>"; };
+		8CE6BDC41E0B98C1000D0CCE /* playerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playerProfileViewController.h; sourceTree = "<group>"; };
+		8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playerProfileViewController.m; sourceTree = "<group>"; };
+		8CE6BDC71E0BBFBB000D0CCE /* rosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rosterViewController.h; sourceTree = "<group>"; };
+		8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rosterViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CE6BD6F1E0B59F1000D0CCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE6BD881E0B59F2000D0CCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE6BD931E0B59F2000D0CCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CE6BD691E0B59F1000D0CCE = {
+			isa = PBXGroup;
+			children = (
+				8CE6BD741E0B59F2000D0CCE /* UCSDAthletics */,
+				8CE6BD8E1E0B59F2000D0CCE /* UCSDAthleticsTests */,
+				8CE6BD991E0B59F2000D0CCE /* UCSDAthleticsUITests */,
+				8CE6BD731E0B59F1000D0CCE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CE6BD731E0B59F1000D0CCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6BD721E0B59F1000D0CCE /* UCSDAthletics.app */,
+				8CE6BD8B1E0B59F2000D0CCE /* UCSDAthleticsTests.xctest */,
+				8CE6BD961E0B59F2000D0CCE /* UCSDAthleticsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CE6BD741E0B59F2000D0CCE /* UCSDAthletics */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6BDBD1E0B88CF000D0CCE /* Parser */,
+				8CE6BD781E0B59F2000D0CCE /* AppDelegate.h */,
+				8CE6BD791E0B59F2000D0CCE /* AppDelegate.m */,
+				8CE6BD7B1E0B59F2000D0CCE /* ViewController.h */,
+				8CE6BD7C1E0B59F2000D0CCE /* ViewController.m */,
+				8CE6BDB11E0B836C000D0CCE /* basketballViewController.h */,
+				8CE6BDB21E0B836C000D0CCE /* basketballViewController.m */,
+				8CE6BDC71E0BBFBB000D0CCE /* rosterViewController.h */,
+				8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */,
+				8CE6BDC41E0B98C1000D0CCE /* playerProfileViewController.h */,
+				8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */,
+				8CE6BD811E0B59F2000D0CCE /* Assets.xcassets */,
+				8CE6BD7E1E0B59F2000D0CCE /* Main.storyboard */,
+				8CE6BD831E0B59F2000D0CCE /* LaunchScreen.storyboard */,
+				8CE6BD861E0B59F2000D0CCE /* Info.plist */,
+				8CE6BD751E0B59F2000D0CCE /* Supporting Files */,
+			);
+			path = UCSDAthletics;
+			sourceTree = "<group>";
+		};
+		8CE6BD751E0B59F2000D0CCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6BD761E0B59F2000D0CCE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CE6BD8E1E0B59F2000D0CCE /* UCSDAthleticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6BD8F1E0B59F2000D0CCE /* UCSDAthleticsTests.m */,
+				8CE6BD911E0B59F2000D0CCE /* Info.plist */,
+			);
+			path = UCSDAthleticsTests;
+			sourceTree = "<group>";
+		};
+		8CE6BD991E0B59F2000D0CCE /* UCSDAthleticsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6BD9A1E0B59F2000D0CCE /* UCSDAthleticsUITests.m */,
+				8CE6BD9C1E0B59F2000D0CCE /* Info.plist */,
+			);
+			path = UCSDAthleticsUITests;
+			sourceTree = "<group>";
+		};
+		8CE6BDBD1E0B88CF000D0CCE /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6BDB41E0B88BC000D0CCE /* playerProfile.h */,
+				8CE6BDB51E0B88BC000D0CCE /* playerProfile.m */,
+				8CE6BDB61E0B88BC000D0CCE /* roster.h */,
+				8CE6BDB71E0B88BC000D0CCE /* roster.m */,
+				8CE6BDB81E0B88BC000D0CCE /* statsParser.h */,
+				8CE6BDB91E0B88BC000D0CCE /* statsParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CE6BD711E0B59F1000D0CCE /* UCSDAthletics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CE6BD9F1E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthletics" */;
+			buildPhases = (
+				8CE6BD6E1E0B59F1000D0CCE /* Sources */,
+				8CE6BD6F1E0B59F1000D0CCE /* Frameworks */,
+				8CE6BD701E0B59F1000D0CCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UCSDAthletics;
+			productName = UCSDAthletics;
+			productReference = 8CE6BD721E0B59F1000D0CCE /* UCSDAthletics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CE6BD8A1E0B59F2000D0CCE /* UCSDAthleticsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CE6BDA21E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthleticsTests" */;
+			buildPhases = (
+				8CE6BD871E0B59F2000D0CCE /* Sources */,
+				8CE6BD881E0B59F2000D0CCE /* Frameworks */,
+				8CE6BD891E0B59F2000D0CCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CE6BD8D1E0B59F2000D0CCE /* PBXTargetDependency */,
+			);
+			name = UCSDAthleticsTests;
+			productName = UCSDAthleticsTests;
+			productReference = 8CE6BD8B1E0B59F2000D0CCE /* UCSDAthleticsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8CE6BD951E0B59F2000D0CCE /* UCSDAthleticsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CE6BDA51E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthleticsUITests" */;
+			buildPhases = (
+				8CE6BD921E0B59F2000D0CCE /* Sources */,
+				8CE6BD931E0B59F2000D0CCE /* Frameworks */,
+				8CE6BD941E0B59F2000D0CCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CE6BD981E0B59F2000D0CCE /* PBXTargetDependency */,
+			);
+			name = UCSDAthleticsUITests;
+			productName = UCSDAthleticsUITests;
+			productReference = 8CE6BD961E0B59F2000D0CCE /* UCSDAthleticsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CE6BD6A1E0B59F1000D0CCE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Daniel Sung";
+				TargetAttributes = {
+					8CE6BD711E0B59F1000D0CCE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					8CE6BD8A1E0B59F2000D0CCE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8CE6BD711E0B59F1000D0CCE;
+					};
+					8CE6BD951E0B59F2000D0CCE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8CE6BD711E0B59F1000D0CCE;
+					};
+				};
+			};
+			buildConfigurationList = 8CE6BD6D1E0B59F1000D0CCE /* Build configuration list for PBXProject "UCSDAthletics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CE6BD691E0B59F1000D0CCE;
+			productRefGroup = 8CE6BD731E0B59F1000D0CCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CE6BD711E0B59F1000D0CCE /* UCSDAthletics */,
+				8CE6BD8A1E0B59F2000D0CCE /* UCSDAthleticsTests */,
+				8CE6BD951E0B59F2000D0CCE /* UCSDAthleticsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CE6BD701E0B59F1000D0CCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE6BD851E0B59F2000D0CCE /* LaunchScreen.storyboard in Resources */,
+				8CE6BD821E0B59F2000D0CCE /* Assets.xcassets in Resources */,
+				8CE6BD801E0B59F2000D0CCE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE6BD891E0B59F2000D0CCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE6BD941E0B59F2000D0CCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CE6BD6E1E0B59F1000D0CCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE6BDBB1E0B88BC000D0CCE /* roster.m in Sources */,
+				8CE6BDBC1E0B88BC000D0CCE /* statsParser.m in Sources */,
+				8CE6BD7D1E0B59F2000D0CCE /* ViewController.m in Sources */,
+				8CE6BDC61E0B98C1000D0CCE /* playerProfileViewController.m in Sources */,
+				8CE6BDB31E0B836C000D0CCE /* basketballViewController.m in Sources */,
+				8CE6BD7A1E0B59F2000D0CCE /* AppDelegate.m in Sources */,
+				8CE6BD771E0B59F2000D0CCE /* main.m in Sources */,
+				8CE6BDC91E0BBFBB000D0CCE /* rosterViewController.m in Sources */,
+				8CE6BDBA1E0B88BC000D0CCE /* playerProfile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE6BD871E0B59F2000D0CCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE6BD901E0B59F2000D0CCE /* UCSDAthleticsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE6BD921E0B59F2000D0CCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE6BD9B1E0B59F2000D0CCE /* UCSDAthleticsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CE6BD8D1E0B59F2000D0CCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CE6BD711E0B59F1000D0CCE /* UCSDAthletics */;
+			targetProxy = 8CE6BD8C1E0B59F2000D0CCE /* PBXContainerItemProxy */;
+		};
+		8CE6BD981E0B59F2000D0CCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CE6BD711E0B59F1000D0CCE /* UCSDAthletics */;
+			targetProxy = 8CE6BD971E0B59F2000D0CCE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CE6BD7E1E0B59F2000D0CCE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CE6BD7F1E0B59F2000D0CCE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CE6BD831E0B59F2000D0CCE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CE6BD841E0B59F2000D0CCE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CE6BD9D1E0B59F2000D0CCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CE6BD9E1E0B59F2000D0CCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CE6BDA01E0B59F2000D0CCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UCSDAthletics/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthletics";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8CE6BDA11E0B59F2000D0CCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UCSDAthletics/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthletics";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8CE6BDA31E0B59F2000D0CCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UCSDAthleticsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthleticsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCSDAthletics.app/UCSDAthletics";
+			};
+			name = Debug;
+		};
+		8CE6BDA41E0B59F2000D0CCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UCSDAthleticsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthleticsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCSDAthletics.app/UCSDAthletics";
+			};
+			name = Release;
+		};
+		8CE6BDA61E0B59F2000D0CCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UCSDAthleticsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthleticsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UCSDAthletics;
+			};
+			name = Debug;
+		};
+		8CE6BDA71E0B59F2000D0CCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UCSDAthleticsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthleticsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UCSDAthletics;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CE6BD6D1E0B59F1000D0CCE /* Build configuration list for PBXProject "UCSDAthletics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CE6BD9D1E0B59F2000D0CCE /* Debug */,
+				8CE6BD9E1E0B59F2000D0CCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CE6BD9F1E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthletics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CE6BDA01E0B59F2000D0CCE /* Debug */,
+				8CE6BDA11E0B59F2000D0CCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8CE6BDA21E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthleticsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CE6BDA31E0B59F2000D0CCE /* Debug */,
+				8CE6BDA41E0B59F2000D0CCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8CE6BDA51E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthleticsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CE6BDA61E0B59F2000D0CCE /* Debug */,
+				8CE6BDA71E0B59F2000D0CCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CE6BD6A1E0B59F1000D0CCE /* Project object */;
+}
