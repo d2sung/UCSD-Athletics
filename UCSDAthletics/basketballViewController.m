@@ -44,19 +44,13 @@
 -(void)setupMen {
     self.title = @"Men's Basketball";
     
-    
-    
-    //TODO: Maybe change this to database
-    //[[NSUserDefaults standardUserDefaults] setObject:self.teamRoster.teamArray forKey: @"roster"];
 }
 
+/*setupWomen:
+ * Load women's stories, roster, schedule
+ */
 -(void)setupWomen {
     self.title = @"Women's Basketball";
-    
-    //[self.teamRoster buildRoster];
-    
-    //TODO: Maybe change this to database
-    //[[NSUserDefaults standardUserDefaults] setObject:self.teamRoster.teamArray forKey: @"roster"];
 
 }
 

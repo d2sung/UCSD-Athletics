@@ -19,8 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    NSString *fullName = [_player.fName stringByAppendingString: _player.lName];
+    NSString * fullName = [NSString stringWithFormat:@"%@ %@", self.player.fName, self.player.lName];
     
     self.nameLabel.text = fullName;
     // Do any additional setup after loading the view.

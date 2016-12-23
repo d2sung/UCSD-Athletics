@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C9C84DE1E0CCAEE0087FDA7 /* bioParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9C84DD1E0CCAEE0087FDA7 /* bioParser.m */; };
 		8CE6BD771E0B59F2000D0CCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD761E0B59F2000D0CCE /* main.m */; };
 		8CE6BD7A1E0B59F2000D0CCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD791E0B59F2000D0CCE /* AppDelegate.m */; };
 		8CE6BD7D1E0B59F2000D0CCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD7C1E0B59F2000D0CCE /* ViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C9C84DC1E0CCAEE0087FDA7 /* bioParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bioParser.h; path = Parser/bioParser.h; sourceTree = "<group>"; };
+		8C9C84DD1E0CCAEE0087FDA7 /* bioParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bioParser.m; path = Parser/bioParser.m; sourceTree = "<group>"; };
 		8CE6BD721E0B59F1000D0CCE /* UCSDAthletics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSDAthletics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE6BD761E0B59F2000D0CCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8CE6BD781E0B59F2000D0CCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,14 +60,14 @@
 		8CE6BD961E0B59F2000D0CCE /* UCSDAthleticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCSDAthleticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE6BD9A1E0B59F2000D0CCE /* UCSDAthleticsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UCSDAthleticsUITests.m; sourceTree = "<group>"; };
 		8CE6BD9C1E0B59F2000D0CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CE6BDB11E0B836C000D0CCE /* basketballViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = basketballViewController.h; path = ../basketballViewController.h; sourceTree = "<group>"; };
-		8CE6BDB21E0B836C000D0CCE /* basketballViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = basketballViewController.m; path = ../basketballViewController.m; sourceTree = "<group>"; };
-		8CE6BDB41E0B88BC000D0CCE /* playerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playerProfile.h; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/playerProfile.h; sourceTree = "<group>"; };
-		8CE6BDB51E0B88BC000D0CCE /* playerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = playerProfile.m; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/playerProfile.m; sourceTree = "<group>"; };
-		8CE6BDB61E0B88BC000D0CCE /* roster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = roster.h; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/roster.h; sourceTree = "<group>"; };
-		8CE6BDB71E0B88BC000D0CCE /* roster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = roster.m; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/roster.m; sourceTree = "<group>"; };
-		8CE6BDB81E0B88BC000D0CCE /* statsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = statsParser.h; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/statsParser.h; sourceTree = "<group>"; };
-		8CE6BDB91E0B88BC000D0CCE /* statsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = statsParser.m; path = ../../../tritonBasketball/tritonBasketball/tritonBasketball/statsParser.m; sourceTree = "<group>"; };
+		8CE6BDB11E0B836C000D0CCE /* basketballViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basketballViewController.h; sourceTree = "<group>"; };
+		8CE6BDB21E0B836C000D0CCE /* basketballViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = basketballViewController.m; sourceTree = "<group>"; };
+		8CE6BDB41E0B88BC000D0CCE /* playerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playerProfile.h; path = Parser/playerProfile.h; sourceTree = "<group>"; };
+		8CE6BDB51E0B88BC000D0CCE /* playerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = playerProfile.m; path = Parser/playerProfile.m; sourceTree = "<group>"; };
+		8CE6BDB61E0B88BC000D0CCE /* roster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = roster.h; path = Parser/roster.h; sourceTree = "<group>"; };
+		8CE6BDB71E0B88BC000D0CCE /* roster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = roster.m; path = Parser/roster.m; sourceTree = "<group>"; };
+		8CE6BDB81E0B88BC000D0CCE /* statsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = statsParser.h; path = Parser/statsParser.h; sourceTree = "<group>"; };
+		8CE6BDB91E0B88BC000D0CCE /* statsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = statsParser.m; path = Parser/statsParser.m; sourceTree = "<group>"; };
 		8CE6BDC41E0B98C1000D0CCE /* playerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playerProfileViewController.h; sourceTree = "<group>"; };
 		8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playerProfileViewController.m; sourceTree = "<group>"; };
 		8CE6BDC71E0BBFBB000D0CCE /* rosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rosterViewController.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				8CE6BDB51E0B88BC000D0CCE /* playerProfile.m */,
 				8CE6BDB61E0B88BC000D0CCE /* roster.h */,
 				8CE6BDB71E0B88BC000D0CCE /* roster.m */,
+				8C9C84DC1E0CCAEE0087FDA7 /* bioParser.h */,
+				8C9C84DD1E0CCAEE0087FDA7 /* bioParser.m */,
 				8CE6BDB81E0B88BC000D0CCE /* statsParser.h */,
 				8CE6BDB91E0B88BC000D0CCE /* statsParser.m */,
 			);
@@ -317,6 +322,7 @@
 				8CE6BD771E0B59F2000D0CCE /* main.m in Sources */,
 				8CE6BDC91E0BBFBB000D0CCE /* rosterViewController.m in Sources */,
 				8CE6BDBA1E0B88BC000D0CCE /* playerProfile.m in Sources */,
+				8C9C84DE1E0CCAEE0087FDA7 /* bioParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +548,7 @@
 				8CE6BDA11E0B59F2000D0CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CE6BDA21E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthleticsTests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +557,7 @@
 				8CE6BDA41E0B59F2000D0CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CE6BDA51E0B59F2000D0CCE /* Build configuration list for PBXNativeTarget "UCSDAthleticsUITests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +566,7 @@
 				8CE6BDA71E0B59F2000D0CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
