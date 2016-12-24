@@ -107,4 +107,21 @@
     return returnDouble;
 }
 
+-(NSString*)parseStringEntry: (NSString *)bioFile
+                            :(int) idx {
+    NSMutableString *stringEntry = [[NSMutableString alloc]init];
+    
+    char letter;
+    letter = [bioFile characterAtIndex: idx];
+    
+    while (letter != ','){
+        
+        [stringEntry appendFormat:@"%c", letter];
+        idx++;
+        letter = [bioFile characterAtIndex: idx];
+    }
+    
+    return stringEntry;
+}
+
 @end

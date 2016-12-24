@@ -12,8 +12,12 @@
 @interface roster : NSObject
 @property NSMutableArray *teamArray;
 @property playerProfile * teamPlayer;
+@property NSMutableDictionary * bioDictionary;
+@property int playersCount;
 
 -(void)buildRoster:(bool) isMen;
+-(void)buildBio:(bool) isMen;
+
 -(void)addPlayer: (playerProfile*) player;
 -(int) iterateToNextLine: (NSString*)statSheet :(int) curIndex;
 -(int) iterateThroughCommas: (NSString*)statSheet :(int) curIndex;

@@ -15,7 +15,7 @@
 @property NSString *fName;
 @property NSString *lName;
 @property NSString *position;
-@property int number;
+@property NSString *number;
 @property NSString *height;
 @property NSString *weight;
 @property NSString *year;

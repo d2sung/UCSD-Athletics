@@ -10,6 +10,7 @@
 #import "playerProfile.h"
 #import "roster.h"
 #import "playerProfileViewController.h"
+#import "appDelegate.h"
 
 @interface rosterViewController ()
 
@@ -20,30 +21,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     //Set navbar title
     if ([self.genderString  isEqual: @"men"]){
         self.title = @"Men's Roster";
         //build men roster
         //Create roster
-        self -> teamRoster = [[roster alloc]init];
-        [self -> teamRoster buildRoster: true];
-        self -> teamTable = self -> teamRoster.teamArray;
+        //self -> teamRoster = [[roster alloc]init];
+        //[self -> teamRoster buildRoster: true];
+        self -> teamTable = appDelegate.mBballRoster.teamArray;
     
     }
     else {
         self.title = @"Women's Roster";
         //build women roster
         //Create roster
-        self -> teamRoster = [[roster alloc]init];
-        [self -> teamRoster buildRoster: false];
-        self -> teamTable = self -> teamRoster.teamArray;
+        //self -> teamRoster = [[roster alloc]init];
+        //[self -> teamRoster buildRoster: false];
+        self -> teamTable = appDelegate.wBballRoster.teamArray;
     }
-    /*
-    //Create roster
-    self -> teamRoster = [[roster alloc]init];
-    [self -> teamRoster buildRoster: false];
-    self -> teamTable = self -> teamRoster.teamArray;
-     */
     
     //Sort array alphabetically
     self -> teamTable = [self -> teamTable sortedArrayUsingSelector:@selector(compare:)];

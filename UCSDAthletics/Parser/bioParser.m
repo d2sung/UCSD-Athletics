@@ -49,6 +49,7 @@
     return stringEntry;
 }
 
+
 -(NSString*) parseBackgroundEntry: (NSString *) bioFile
                                  :(int) idx {
     
@@ -70,7 +71,6 @@
             lastQuote = true;
         }
     }
-    
     return stringEntry;
     
 }

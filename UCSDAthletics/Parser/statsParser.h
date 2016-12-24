@@ -20,5 +20,7 @@
                            : (int) idx;
 -(double)parseIntEntry: (NSString*) statFile
                       :(int) idx;
+-(NSString*)parseStringEntry: (NSString*) bioFile
+                            :(int)idx;
 
 @end

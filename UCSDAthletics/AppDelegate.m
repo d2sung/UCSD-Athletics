@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.mBballRoster = [[roster alloc]init];
+    [self.mBballRoster buildRoster: true];
+    
+    self.wBballRoster = [[roster alloc]init];
+    [self.wBballRoster buildRoster: false];
+    
     return YES;
 }
 

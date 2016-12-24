@@ -30,40 +30,31 @@
     NSString *statSheet = [[NSString alloc]init];
     statSheet = [parser getStats:isMen];
     
-    //Bio parser
-    bioParser *bParser = [[bioParser alloc] init];
-    NSString *bioSheet = [[NSString alloc] init];
-    bioSheet = [bParser getBio:isMen];
-    
-    
-    
-    // creating team roster array
+    //Creating team roster array
     self.teamArray = [[NSMutableArray alloc]init];
     //Starting point of statsheet
     int idx = 278;
-    //starting point of biosheet
-    int bidx;
     
-    //If women, start at 71 because missing weight
-    if (isMen)
-        bidx = 79;
-    else
-        bidx = 71;
-    
-    
-    //Get number of players on team
+    //Number of players on team
     unsigned numberOfLines, index, stringLength = [statSheet length];
     
     for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
         index = NSMaxRange([statSheet lineRangeForRange:NSMakeRange(index, 0)]);
     
     
+    self.playersCount = numberOfLines - 5;
+    
+    
+    //Get bio info
+    [self buildBio:isMen];
+    
     //For number of players in list, add player to roster
-    for(int playerIdx = 0; playerIdx < numberOfLines - 5; playerIdx++){
+    for(int playerIdx = 0; playerIdx < self.playersCount; playerIdx++){
         playerProfile *addingPlayer = [[playerProfile alloc] init];
         
         //Parse through stats
-        addingPlayer.number =[parser parseIntEntry:statSheet :idx];
+   
+        addingPlayer.number =[parser parseStringEntry:statSheet :idx];
             idx = [self iterateThroughCommas:statSheet: idx];
         addingPlayer.lName = [parser parseLastName:statSheet:idx];
             idx = [self iterateThroughCommas:statSheet: idx];
@@ -120,30 +111,17 @@
         addingPlayer.ppg = [parser parseIntEntry:statSheet :idx];
             idx = [self iterateThroughCommas:statSheet: idx];
         addingPlayer.apg = [parser parseIntEntry:statSheet :idx];
+        idx = [self iterateToNextLine:statSheet: idx];
         
-        /******************Parse through bio***********************/
         
-        //First, skip through number and name
-        bidx = [self iterateThroughCommas:bioSheet: bidx];
-        bidx = [self iterateThroughCommas:bioSheet: bidx];
-        
-        addingPlayer.position = [bParser parseStringEntry:bioSheet :bidx];
-        bidx = [self iterateThroughCommas:bioSheet: bidx];
-        addingPlayer.height = [bParser parseStringEntry:bioSheet :bidx];
-        
-        //Women does not have weight
-        if(isMen){
-            bidx = [self iterateThroughCommas:bioSheet: bidx];
-            addingPlayer.weight = [bParser parseStringEntry:bioSheet :bidx];
-        }
-        
-        bidx = [self iterateThroughCommas:bioSheet: bidx];
-        addingPlayer.year = [bParser parseStringEntry:bioSheet :bidx];
-        bidx = [self iterateThroughCommas:bioSheet: bidx];
-        addingPlayer.major = [bParser parseStringEntry:bioSheet :bidx];
-        bidx = [self iterateThroughCommas:bioSheet: bidx];
-        addingPlayer.background = [bParser parseBackgroundEntry:bioSheet :bidx];
-        bidx = [self iterateThroughCommas:bioSheet: bidx];
+        //Add Bio info
+        playerProfile *bioPlayer = [self.bioDictionary objectForKey:addingPlayer.number];
+        addingPlayer.position = bioPlayer.position;
+        addingPlayer.height = bioPlayer.height;
+        addingPlayer.weight = bioPlayer.weight;
+        addingPlayer.year = bioPlayer.year;
+        addingPlayer.major = bioPlayer.major;
+        addingPlayer.background = bioPlayer.background;
         
         //Add player to roster array
         [self.teamArray addObject:addingPlayer];
@@ -153,61 +131,61 @@
     idx = [self iterateToNextLine:statSheet :idx];
 
     //Adding Team Total
-    _teamPlayer = [[playerProfile alloc] init];
+    self.teamPlayer = [[playerProfile alloc] init];
     
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.lName = [parser parseLastName:statSheet:idx];
+    self.teamPlayer.lName = [parser parseLastName:statSheet:idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.fName = @"Team";
-    _teamPlayer.gp = [parser parseIntEntry:statSheet :idx];
-        idx = [self iterateThroughCommas:statSheet: idx];
-        idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.totMin = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.fName = @"Team";
+    self.teamPlayer.gp = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.fgMade = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.totMin = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.fgAttempts = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.fgPct = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.fgMade = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.threeFg = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.fgAttempts = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.threeAttempts = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.fgPct = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.threePct = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.threeFg = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.ft = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.threeAttempts = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.ftAttempts = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.threePct = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.ftPct = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.ft = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.offReb = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.ftAttempts = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.defReb = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.ftPct = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.reb = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.offReb = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.rpg = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.defReb = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.fouls = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.reb = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.foulOuts = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.rpg = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.assists = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.fouls = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.to = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.foulOuts = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.blk = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.assists = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.stl = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.to = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.pts = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.blk = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.ppg = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.stl = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateThroughCommas:statSheet: idx];
-    _teamPlayer.apg = [parser parseIntEntry:statSheet :idx];
+    self.teamPlayer.pts = [parser parseIntEntry:statSheet :idx];
+        idx = [self iterateThroughCommas:statSheet: idx];
+    self.teamPlayer.ppg = [parser parseIntEntry:statSheet :idx];
+        idx = [self iterateThroughCommas:statSheet: idx];
+    self.teamPlayer.apg = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateToNextLine:statSheet :idx];
     
     //[self.teamArray addObject:addingPlayer];
@@ -227,6 +205,75 @@
     }
     curIndex++;
     return curIndex;
+}
+
+-(void)buildBio:(bool)isMen {
+    
+    //Bio parser
+    bioParser *bParser = [[bioParser alloc] init];
+    NSString *bioSheet = [[NSString alloc] init];
+    bioSheet = [bParser getBio:isMen];
+    
+    //Create dictionary
+    self.bioDictionary = [[NSMutableDictionary alloc] init];
+    
+    //starting point of biosheet
+    int bidx;
+    
+    //Number of players on team
+    unsigned numberOfLines, index, stringLength = [bioSheet length];
+    
+    for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
+        index = NSMaxRange([bioSheet lineRangeForRange:NSMakeRange(index, 0)]);
+    
+    
+    int playersCount = numberOfLines - 1;
+    
+    //If women, start at 71 because missing weight
+    if (isMen)
+        bidx = 80;
+    else
+        bidx = 71;
+    
+    /******************Parse through bio***********************/
+    for (int playerIdx = 0; playerIdx < self.playersCount + 2; playerIdx++){
+        playerProfile *addingPlayer = [[playerProfile alloc] init];
+        
+        //Get number
+        addingPlayer.number = [bParser parseStringEntry:bioSheet :bidx];
+        //NSLog(@"adding number in bio: %@", addingPlayer.number);
+        bidx = [self iterateThroughCommas:bioSheet: bidx];
+        
+        //First, skip through name
+        bidx = [self iterateThroughCommas:bioSheet: bidx];
+        
+        addingPlayer.position = [bParser parseStringEntry:bioSheet :bidx];
+        bidx = [self iterateThroughCommas:bioSheet: bidx];
+    
+        addingPlayer.height = [bParser parseStringEntry:bioSheet :bidx];
+    
+        //Women does not have weight
+        if(isMen){
+            bidx = [self iterateThroughCommas:bioSheet: bidx];
+            addingPlayer.weight = [bParser parseStringEntry:bioSheet :bidx];
+        }
+    
+        bidx = [self iterateThroughCommas:bioSheet: bidx];
+        addingPlayer.year = [bParser parseStringEntry:bioSheet :bidx];
+        bidx = [self iterateThroughCommas:bioSheet: bidx];
+        addingPlayer.major = [bParser parseStringEntry:bioSheet :bidx];
+        bidx = [self iterateThroughCommas:bioSheet: bidx];
+        addingPlayer.background = [bParser parseBackgroundEntry:bioSheet :bidx];
+        bidx = [self iterateThroughCommas: bioSheet: bidx];
+        
+        //Makes sure we dont go out of bounds on string
+        if (playerIdx < playersCount - 1){
+            bidx = [self iterateToNextLine:bioSheet: bidx];
+        }
+        
+        [self.bioDictionary setObject:addingPlayer forKey:addingPlayer.number];
+    }
+    
 }
 
 //Add playerProfile to roster

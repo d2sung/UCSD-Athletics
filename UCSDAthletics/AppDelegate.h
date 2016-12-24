@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "roster.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property roster * mBballRoster;
+@property roster * wBballRoster;
 
 @property (strong, nonatomic) UIWindow *window;
 
