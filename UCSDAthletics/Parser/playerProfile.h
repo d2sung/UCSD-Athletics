@@ -21,6 +21,7 @@
 @property NSString *year;
 @property NSString *major;
 @property NSString *background;
+@property NSString *prevSchool;
 
 //Stats
 @property int gp;

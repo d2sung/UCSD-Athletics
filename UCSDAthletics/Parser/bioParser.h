@@ -20,4 +20,7 @@
 -(NSString*) parseBackgroundEntry: (NSString *) bioFile
                                  :(int) idx;
 
+- (NSString*) parsePrevSchoo: (NSString *) bioFile
+                            :(int) idx;
+
 @end

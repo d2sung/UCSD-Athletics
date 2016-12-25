@@ -62,7 +62,10 @@
         letter = nil;
     }
     
-    while (lastQuote == false){
+    
+    
+    while (letter != '('){
+        
         [stringEntry appendFormat:@"%c", letter];
         idx++;
         letter = [bioFile characterAtIndex:idx];
@@ -73,6 +76,31 @@
     }
     return stringEntry;
     
+}
+
+- (NSString*) parsePrevSchoo: (NSString *) bioFile
+                            :(int) idx {
+    
+    NSMutableString *stringEntry = [[NSMutableString alloc]init];
+    char letter;
+    letter = [bioFile characterAtIndex: idx];
+    
+    if (letter == '('){
+        letter = nil;
+    }
+    
+    while (letter != '"'){
+        [stringEntry appendFormat:@"%c", letter];
+        idx++;
+        letter = [bioFile characterAtIndex:idx];
+        
+        if (letter == ')') {
+            letter = nil;
+        }
+        
+    }
+    
+    return stringEntry;
 }
 
 @end

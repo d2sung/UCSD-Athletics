@@ -18,12 +18,57 @@
 
 @implementation playerProfileViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setStats];
+    
+    
+}
+
+
+
+/* Set scroll view
+ * Set gradient colors
+ */
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0];
+    self.yellowColorView.backgroundColor = [UIColor colorWithRed:0.96 green:0.80 blue:0.05 alpha:1.0];
     
-    //UIColor(red:0.96, green:0.80, blue:0.05, alpha:1.0)
+    [self.playerScrollView layoutIfNeeded];
+    self.playerScrollView.contentSize = self.playerContentView.bounds.size;
+    //Set gradient layer
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.playerContentView.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.96 green:0.80 blue:0.05 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0] CGColor], nil];
+    gradient.locations = @[@0.0, @0.55];
+    [self.playerContentView.layer insertSublayer:gradient atIndex:0];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    int fontSize = (int) self.lNameLabel.font.pointSize - (CGFloat)5;
+    self.fnameLabel.font = [self.fnameLabel.font fontWithSize:fontSize];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
+
+
+
+
+
+/* Set stats and bio of player
+ *
+ */
+-(void)setStats{
     
     //Set Name, number
     self.fnameLabel.text = self.player.fName;
@@ -31,6 +76,7 @@
     self.numberLabel.text = self.player.number;
     self.backgroundLabel.text = self.player.background;
     self.majorLabel.text = self.player.major;
+    self.prevSchool.text = self.player.prevSchool;
     
     //Set position
     if ([self.player.position isEqual: @"G"])
@@ -81,23 +127,10 @@
     
     NSString * fileName = [NSString stringWithFormat:@"%@%@%@", [self.player.fName substringToIndex:1], self.player.lName, @".png"];
     
-    [_profileImage setImage:[UIImage imageNamed:fileName]];
-
+    [self.profileImage setImage:[UIImage imageNamed:fileName]];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -42,6 +42,10 @@
         self -> teamTable = appDelegate.wBballRoster.teamArray;
     }
     
+    self.rosterView.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95];
+    
+    
+    
     //Sort array alphabetically
     self -> teamTable = [self -> teamTable sortedArrayUsingSelector:@selector(compare:)];
     
@@ -82,6 +86,13 @@
         NSString *fullName = [ player.lName stringByAppendingString: comma];
         fullName = [fullName stringByAppendingString: player.fName];
         cell.textLabel.text = fullName;
+        cell.textLabel.textColor = [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:1.0];
+        
+        if(indexPath.row % 2 == 0)
+            cell.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0];
+        else
+            cell.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.96];
+        
     }
     
     //If cell name is TEAM TOTAL

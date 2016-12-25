@@ -236,7 +236,7 @@
         bidx = 71;
     
     /******************Parse through bio***********************/
-    for (int playerIdx = 0; playerIdx < self.playersCount + 2; playerIdx++){
+    for (int playerIdx = 0; playerIdx < playersCount; playerIdx++){
         playerProfile *addingPlayer = [[playerProfile alloc] init];
         
         //Get number
@@ -264,6 +264,7 @@
         addingPlayer.major = [bParser parseStringEntry:bioSheet :bidx];
         bidx = [self iterateThroughCommas:bioSheet: bidx];
         addingPlayer.background = [bParser parseBackgroundEntry:bioSheet :bidx];
+        addingPlayer.prevSchool = [bParser parsePrevSchoo:bioSheet :bidx];
         bidx = [self iterateThroughCommas: bioSheet: bidx];
         
         //Makes sure we dont go out of bounds on string

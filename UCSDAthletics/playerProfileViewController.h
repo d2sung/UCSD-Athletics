@@ -12,6 +12,10 @@
 
 @interface playerProfileViewController : UIViewController
 
+
+@property (strong, nonatomic) IBOutlet UIScrollView *playerScrollView;
+@property (weak, nonatomic) IBOutlet UIView *playerContentView;
+@property (weak, nonatomic) IBOutlet UIView *yellowColorView;
 //Label
 @property (weak, nonatomic) IBOutlet UILabel *fnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lNameLabel;
@@ -19,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *positionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *majorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *backgroundLabel;
+@property (weak, nonatomic) IBOutlet UILabel *prevSchool;
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ppgLabel;
@@ -46,6 +51,10 @@
 
 @property playerProfile *player;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+
+
+//Set the stats of player, called in viewDidLoad
+-(void)setStats;
 
 
 @end
