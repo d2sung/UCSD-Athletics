@@ -22,15 +22,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([self.genderString isEqualToString:@"men"]){
-        [self setupMen];
-    }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    else {
+    if ([defaults boolForKey:@"gender"])
+        [self setupMen];
+    else
         [self setupWomen];
-    }
-    // Do any additional setup after loading the view.
+    
+    [[self.tabBarController.tabBar.items objectAtIndex:1] initWithTitle: @"Schedule" image:[UIImage imageNamed:@"schedule"] tag: 1];
+    
+    [[self.tabBarController.tabBar.items objectAtIndex:2] initWithTitle: @"Roster" image:[UIImage imageNamed:@"roster"] tag: 2];
+    
+      [[self.tabBarController.tabBar.items objectAtIndex:3] initWithTitle: @"Standings" image:[UIImage imageNamed:@"standings"] tag: 3];
+    
+   
+    
+    
+    
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,31 +55,23 @@
  */
 -(void)setupMen {
     self.title = @"Men's Basketball";
+    [self.tabBarController setTitle:@"Men's Basketball"];
+    [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Men's Basketball"];
+    [[self.tabBarController.tabBar.items objectAtIndex:0] initWithTitle: @"Men's Basketball" image:[UIImage imageNamed:@"basketball"] tag: 0];
+     
     
-}
+
+     }
 
 /*setupWomen:
  * Load women's stories, roster, schedule
  */
 -(void)setupWomen {
-    self.title = @"Women's Basketball";
+    [self.tabBarController setTitle:@"Women's Basketball"];
+    //[[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Women's Basketball"];
+    
+    [[self.tabBarController.tabBar.items objectAtIndex:0] initWithTitle: @"Women's Basketball" image:[UIImage imageNamed:@"basketball"] tag: 0];
 
 }
-
-/* prepareForSegue:
- * Determines the gender segue and sets genderString in sportController accordingly
- */
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    rosterViewController * rosterController = segue.destinationViewController;
-    if ([self.genderString  isEqual: @"men"]) {
-        rosterController.genderString = @"men";
-    }
-    
-    else {
-        rosterController.genderString = @"women";
-    }
-    
-}
-
 
 @end

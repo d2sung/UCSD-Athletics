@@ -39,15 +39,20 @@
  * Determines the gender segue and sets genderString in sportController accordingly
  */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    basketballViewController* sportController = segue.destinationViewController;
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   
     if ([segue.identifier isEqualToString:@"menSegueIdentifier"]){
-        sportController.genderString = @"men";
+         [defaults setInteger:true forKey:@"gender"];
     }
     
     else if ([segue.identifier isEqualToString: @"womenSegueIdentifier"]){
-        sportController.genderString = @"women";
+        [defaults setBool:false forKey:@"gender"];
         }
+    
+     [defaults synchronize];
+    
+    
 
 }
 

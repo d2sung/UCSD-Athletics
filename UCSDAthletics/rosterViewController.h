@@ -18,7 +18,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewObject;
-@property(strong, nonatomic) NSString * genderString;
 @property (strong, nonatomic) IBOutlet UIView *rosterView;
 
 

@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
 @interface playerProfileViewController ()
 
 @end
@@ -49,8 +50,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    int fontSize = (int) self.lNameLabel.font.pointSize - (CGFloat)5;
-    self.fnameLabel.font = [self.fnameLabel.font fontWithSize:fontSize];
+    
+    NSString * fileName = [NSString stringWithFormat:@"%@%@", [[self.player.fName substringToIndex:1] lowercaseString], self.player.lName];
+    
+    [self.profileImage setImage:[UIImage imageNamed:fileName]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,11 +128,6 @@
     self.fgPctValueLabel.text =[NSString stringWithFormat:@"%.01f", self.player.fgPct*100];
     self.ftPctValueLabel.text = [NSString stringWithFormat:@"%.01f", self.player.ftPct*100];
     self.threeptPctValueLabel.text = [NSString stringWithFormat:@"%.01f", self.player.threePct*100];
-    
-    NSString * fileName = [NSString stringWithFormat:@"%@%@%@", [self.player.fName substringToIndex:1], self.player.lName, @".png"];
-    
-    [self.profileImage setImage:[UIImage imageNamed:fileName]];
-    
 }
 
 

@@ -22,25 +22,21 @@
     [super viewDidLoad];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    //Set navbar title
-    if ([self.genderString  isEqual: @"men"]){
-        self.title = @"Men's Roster";
-        //build men roster
-        //Create roster
-        //self -> teamRoster = [[roster alloc]init];
-        //[self -> teamRoster buildRoster: true];
+    //Set tabbar title
+    if ([defaults boolForKey:@"gender"]){
+        [self.tabBarController setTitle:@"Men's Basketball"];
         self -> teamTable = appDelegate.mBballRoster.teamArray;
-    
     }
+    
     else {
-        self.title = @"Women's Roster";
-        //build women roster
-        //Create roster
-        //self -> teamRoster = [[roster alloc]init];
-        //[self -> teamRoster buildRoster: false];
+        [self.tabBarController setTitle:@"Women's Basketball"];
         self -> teamTable = appDelegate.wBballRoster.teamArray;
     }
+    
+    
+    
     
     self.rosterView.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95];
     

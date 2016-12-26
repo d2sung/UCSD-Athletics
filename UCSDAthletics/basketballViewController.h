@@ -13,12 +13,6 @@
 @interface basketballViewController : UIViewController
 
 
-//Variables
-@property(strong, nonatomic) NSString * genderString;
-@property roster * teamRoster;
-
-
-
 //Methods
 -(void)setupMen;
 -(void)setupWomen;
