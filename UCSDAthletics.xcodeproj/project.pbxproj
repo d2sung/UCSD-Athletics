@@ -13,6 +13,10 @@
 		8C4BD04D1E112A830093D129 /* standingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BD04C1E112A830093D129 /* standingsViewController.m */; };
 		8C4BD09B1E1365290093D129 /* sportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BD09A1E1365290093D129 /* sportViewController.m */; };
 		8C9C84DE1E0CCAEE0087FDA7 /* bioParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9C84DD1E0CCAEE0087FDA7 /* bioParser.m */; };
+		8CAC0D611E139BFE00ED94D8 /* storyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC0D601E139BFE00ED94D8 /* storyViewController.m */; };
+		8CAC0D661E13A69A00ED94D8 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC0D631E13A69A00ED94D8 /* HTMLNode.m */; };
+		8CAC0D671E13A69A00ED94D8 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC0D651E13A69A00ED94D8 /* HTMLParser.m */; };
+		8CAC0D691E13ABBB00ED94D8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAC0D681E13ABBB00ED94D8 /* libxml2.tbd */; };
 		8CE6BD771E0B59F2000D0CCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD761E0B59F2000D0CCE /* main.m */; };
 		8CE6BD7A1E0B59F2000D0CCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD791E0B59F2000D0CCE /* AppDelegate.m */; };
 		8CE6BD7D1E0B59F2000D0CCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BD7C1E0B59F2000D0CCE /* ViewController.m */; };
@@ -56,6 +60,13 @@
 		8C4BD09A1E1365290093D129 /* sportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sportViewController.m; sourceTree = "<group>"; };
 		8C9C84DC1E0CCAEE0087FDA7 /* bioParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bioParser.h; path = Parser/bioParser.h; sourceTree = "<group>"; };
 		8C9C84DD1E0CCAEE0087FDA7 /* bioParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bioParser.m; path = Parser/bioParser.m; sourceTree = "<group>"; };
+		8CAC0D5F1E139BFE00ED94D8 /* storyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storyViewController.h; sourceTree = "<group>"; };
+		8CAC0D601E139BFE00ED94D8 /* storyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storyViewController.m; sourceTree = "<group>"; };
+		8CAC0D621E13A69A00ED94D8 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMLNode.h; path = Parser/HTMLNode.h; sourceTree = "<group>"; };
+		8CAC0D631E13A69A00ED94D8 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMLNode.m; path = Parser/HTMLNode.m; sourceTree = "<group>"; };
+		8CAC0D641E13A69A00ED94D8 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMLParser.h; path = Parser/HTMLParser.h; sourceTree = "<group>"; };
+		8CAC0D651E13A69A00ED94D8 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMLParser.m; path = Parser/HTMLParser.m; sourceTree = "<group>"; };
+		8CAC0D681E13ABBB00ED94D8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		8CE6BD721E0B59F1000D0CCE /* UCSDAthletics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSDAthletics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE6BD761E0B59F2000D0CCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8CE6BD781E0B59F2000D0CCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAC0D691E13ABBB00ED94D8 /* libxml2.tbd in Frameworks */,
 				701C20479F48327FEF617A17 /* libPods-UCSDAthletics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +132,7 @@
 		04D1FC61B3B7631E158321FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CAC0D681E13ABBB00ED94D8 /* libxml2.tbd */,
 				CCB29964638AA481BC23E8C7 /* libPods-UCSDAthletics.a */,
 				98BBF2F26A7E594A73063DB2 /* libPods-UCSDAthleticsTests.a */,
 				E43D370F115E1506D9170203 /* libPods-UCSDAthleticsUITests.a */,
@@ -150,6 +163,8 @@
 				8CE6BDC71E0BBFBB000D0CCE /* rosterViewController.h */,
 				8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */,
 				8CE6BDC41E0B98C1000D0CCE /* playerProfileViewController.h */,
+				8CAC0D5F1E139BFE00ED94D8 /* storyViewController.h */,
+				8CAC0D601E139BFE00ED94D8 /* storyViewController.m */,
 				8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */,
 				8C4BD04B1E112A830093D129 /* standingsViewController.h */,
 				8C4BD04C1E112A830093D129 /* standingsViewController.m */,
@@ -224,6 +239,10 @@
 		8CE6BDBD1E0B88CF000D0CCE /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				8CAC0D621E13A69A00ED94D8 /* HTMLNode.h */,
+				8CAC0D631E13A69A00ED94D8 /* HTMLNode.m */,
+				8CAC0D641E13A69A00ED94D8 /* HTMLParser.h */,
+				8CAC0D651E13A69A00ED94D8 /* HTMLParser.m */,
 				8CE6BDB41E0B88BC000D0CCE /* playerProfile.h */,
 				8CE6BDB51E0B88BC000D0CCE /* playerProfile.m */,
 				8CE6BDB61E0B88BC000D0CCE /* roster.h */,
@@ -517,11 +536,14 @@
 				8CE6BDBC1E0B88BC000D0CCE /* statsParser.m in Sources */,
 				8CE6BD7D1E0B59F2000D0CCE /* ViewController.m in Sources */,
 				8C4BD09B1E1365290093D129 /* sportViewController.m in Sources */,
+				8CAC0D611E139BFE00ED94D8 /* storyViewController.m in Sources */,
+				8CAC0D671E13A69A00ED94D8 /* HTMLParser.m in Sources */,
 				8CE6BDC61E0B98C1000D0CCE /* playerProfileViewController.m in Sources */,
 				8C4BD04D1E112A830093D129 /* standingsViewController.m in Sources */,
 				8CE6BD7A1E0B59F2000D0CCE /* AppDelegate.m in Sources */,
 				8CE6BD771E0B59F2000D0CCE /* main.m in Sources */,
 				8CE6BDC91E0BBFBB000D0CCE /* rosterViewController.m in Sources */,
+				8CAC0D661E13A69A00ED94D8 /* HTMLNode.m in Sources */,
 				8CE6BDBA1E0B88BC000D0CCE /* playerProfile.m in Sources */,
 				8C9C84DE1E0CCAEE0087FDA7 /* bioParser.m in Sources */,
 			);
@@ -615,6 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -654,6 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -667,6 +691,7 @@
 			baseConfigurationReference = 871D9E215394C762F72057A5 /* Pods-UCSDAthletics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UCSDAthletics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthletics";
@@ -679,6 +704,7 @@
 			baseConfigurationReference = A1C5E621BFF244DBF59A1B27 /* Pods-UCSDAthletics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UCSDAthletics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Sung.UCSDAthletics";

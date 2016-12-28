@@ -57,80 +57,80 @@
             <objects>
                 <viewController storyboardIdentifier="basketball" id="9RN-wl-ziF" customClass="sportViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jsN-tX-JGM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="875"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XbX-BW-xvG">
-                                <rect key="frame" x="0.0" y="63" width="320" height="812"/>
+                                <rect key="frame" x="0.0" y="63" width="320" height="1137"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="IPK-Xm-Oh7" userLabel="Sport Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="812"/>
+                                        <rect key="frame" x="0.0" y="-117" width="320" height="1354"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="62q-70-PYq">
-                                                <rect key="frame" x="8" y="8" width="304" height="134"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="80" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="pUn-bf-Jgp" kind="push" id="zI5-36-K0P"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aVE-zu-7Vb">
-                                                <rect key="frame" x="8" y="150" width="304" height="134"/>
+                                                <rect key="frame" x="8" y="331" width="304" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="80" maxX="0.0" maxY="0.0"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="120" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="pUn-bf-Jgp" kind="push" id="LqR-Ot-TqD"/>
+                                                    <segue destination="pUn-bf-Jgp" kind="push" identifier="story2Segue" id="LqR-Ot-TqD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v5t-QJ-Tau">
-                                                <rect key="frame" x="8" y="292" width="304" height="134"/>
+                                                <rect key="frame" x="8" y="737" width="304" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="80" maxX="0.0" maxY="0.0"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="120" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="pUn-bf-Jgp" kind="push" id="xt2-nL-LQl"/>
+                                                    <segue destination="pUn-bf-Jgp" kind="push" identifier="story3Segue" id="xt2-nL-LQl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bOm-Ho-qWw">
-                                                <rect key="frame" x="8" y="434" width="304" height="134"/>
+                                                <rect key="frame" x="8" y="534" width="304" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="80" maxX="0.0" maxY="0.0"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="120" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="pUn-bf-Jgp" kind="push" id="nl9-sE-QWn"/>
+                                                    <segue destination="pUn-bf-Jgp" kind="push" identifier="story4Segue" id="nl9-sE-QWn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="62q-70-PYq">
+                                                <rect key="frame" x="8" y="128" width="304" height="195"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="120" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="pUn-bf-Jgp" kind="push" identifier="story1Segue" id="zI5-36-K0P"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cJq-Wx-Gvn">
-                                                <rect key="frame" x="8" y="576" width="304" height="134"/>
+                                                <rect key="frame" x="8" y="940" width="304" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="80" maxX="0.0" maxY="0.0"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="120" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="pUn-bf-Jgp" kind="push" id="Kod-fP-Vcd"/>
+                                                    <segue destination="pUn-bf-Jgp" kind="push" identifier="story5Segue" id="Kod-fP-Vcd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -144,7 +144,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Eww-km-f9d"/>
                     <navigationItem key="navigationItem" title="Basketball" id="8AI-gR-58B"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="875"/>
+                    <size key="freeformSize" width="320" height="1200"/>
                     <connections>
                         <outlet property="sportContentView" destination="IPK-Xm-Oh7" id="zng-H1-8yL"/>
                         <outlet property="sportScrollView" destination="XbX-BW-xvG" id="9wF-r2-jFj"/>
@@ -157,22 +157,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjX-HI-WwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="598.5"/>
+            <point key="canvasLocation" x="480" y="698"/>
         </scene>
-        <!--View Controller-->
+        <!--Story View Controller-->
         <scene sceneID="2wQ-pf-SXl">
             <objects>
-                <viewController id="pUn-bf-Jgp" sceneMemberID="viewController">
+                <viewController id="pUn-bf-Jgp" customClass="storyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nbm-4v-Q4B">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="875"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O4x-wQ-7mY">
+                                <rect key="frame" x="27" y="275" width="266" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="GDf-JR-SNJ">
+                                <rect key="frame" x="12" y="81" width="297" height="197"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" id="kYz-T8-5S3">
+                                <rect key="frame" x="27" y="353" width="266" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="x0l-35-d8E"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="storyImageView" destination="GDf-JR-SNJ" id="bN1-O0-jnp"/>
+                        <outlet property="storyTextView" destination="kYz-T8-5S3" id="PyB-Wr-2Kk"/>
+                        <outlet property="titleLabel" destination="O4x-wQ-7mY" id="gG5-Hw-FyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUL-Ol-9IR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="634.5"/>
+            <point key="canvasLocation" x="943" y="829"/>
         </scene>
         <!--Item-->
         <scene sceneID="ndz-qt-FSf">
@@ -589,6 +617,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0sM-rv-4ZL"/>
-        <segue reference="zI5-36-K0P"/>
+        <segue reference="nl9-sE-QWn"/>
     </inferredMetricsTieBreakers>
 </document>

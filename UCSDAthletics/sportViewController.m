@@ -14,6 +14,7 @@
 #import "MWFeedInfo.h"
 #import "NSString+HTML.h"
 #import "AppDelegate.h"
+#import "storyViewController.h"
 
 @interface sportViewController ()
 
@@ -60,11 +61,6 @@
     self.sportScrollView.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95];
 
 }
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -119,15 +115,48 @@
         
         [button setBackgroundImage:storyImage forState:UIControlStateNormal];
         
-        
-        
-        
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        button.contentEdgeInsets = UIEdgeInsetsMake(0, 10, -80, 0);
+        button.contentEdgeInsets = UIEdgeInsetsMake(0, 10, -145, 0);
         button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         button.titleLabel.numberOfLines = 2;
     
     }
+}
+
+
+/* prepareForSegue:
+ *
+ */
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    storyViewController * storyView = segue.destinationViewController;
+    
+    if ([segue.identifier isEqualToString:@"story1Segue"]){
+        storyView.storyArray = self.rssArray[0];
+    }
+    
+    else if ([segue.identifier isEqualToString: @"story2Segue"]){
+        storyView.storyArray = self.rssArray[1];
+    }
+    
+    else if ([segue.identifier isEqualToString: @"story3Segue"]){
+        storyView.storyArray = self.rssArray[2];
+    }
+    
+    else if ([segue.identifier isEqualToString: @"story4Segue"]){
+        storyView.storyArray = self.rssArray[3];
+    }
+    
+    else if ([segue.identifier isEqualToString: @"story5Segue"]){
+        storyView.storyArray = self.rssArray[4];
+    }
+    
+    else {
+            
+    }
+    
+    
+    
 }
 
 
