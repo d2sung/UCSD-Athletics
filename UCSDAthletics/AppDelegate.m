@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "MWFeedParser.h"
+#import "MWFeedItem.h"
+#import "MWFeedInfo.h"
+#import "NSString+HTML.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +27,12 @@
     
     self.wBballRoster = [[roster alloc]init];
     [self.wBballRoster buildRoster: false];
+    
+    self.womenRSSArray = [[NSMutableArray alloc] init];
+    self.menRSSArray = [[NSMutableArray alloc] init];
+    
+    
+    [self getRSS];
     
     return YES;
 }
@@ -47,6 +57,79 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)getRSS {
+    
+    //Go through men RSS
+    parsedItems = [[NSMutableArray alloc] init];
+    feedParser = [[MWFeedParser alloc] initWithFeedURL:[NSURL URLWithString:@"http://www.ucsdtritons.com/rss.dbml?db_oem_id=5800&RSS_SPORT_ID=2337&media=news"]];
+    feedParser.delegate = self;
+    feedParser.feedParseType = ParseTypeFull;
+    feedParser.connectionType = ConnectionTypeSynchronously;
+    [feedParser parse];
+    
+    
+    for (int i = 0; i < 5; i++){
+        MWFeedItem *item = parsedItems[i];
+        
+        //Get title (NSString
+        NSString *title = item.title ? [item.title stringByDecodingHTMLEntities]: @"[No Title]";
+        
+        //Get image (UIImage)
+        NSArray * enclosureArray = item.enclosures;
+        NSDictionary *enclosureDict = enclosureArray[0];
+        NSURL * imageUrl = [NSURL URLWithString:[enclosureDict valueForKey:@"url"]];
+        NSData * data = [[NSData alloc] initWithContentsOfURL:imageUrl];
+        UIImage * storyImage = [[UIImage alloc] initWithData:data];
+        
+        //Get link (NSURL)
+        NSURL * linkURL = [NSURL URLWithString:item.link];
+        
+        NSArray *itemEntry = [NSArray arrayWithObjects: title, storyImage, linkURL, nil];
+        [self.menRSSArray addObject:itemEntry];
+    }
+    
+    //Refresh
+    [parsedItems removeAllObjects];
+    [feedParser stopParsing];
+    
+    
+    //Go through women RSS
+    feedParser = [[MWFeedParser alloc] initWithFeedURL:[NSURL URLWithString:@"http://www.ucsdtritons.com/rss.dbml?db_oem_id=5800&RSS_SPORT_ID=2338&media=news"]];
+    feedParser.delegate = self;
+    feedParser.feedParseType = ParseTypeFull;
+    feedParser.connectionType = ConnectionTypeSynchronously;
+    [feedParser parse];
+    
+    for (int i = 0; i < 5; i++){
+        MWFeedItem *item  = parsedItems[i];
+        
+        //Get title (NSString)
+        NSString *title = item.title ? [item.title stringByDecodingHTMLEntities]: @"[No Title]";
+        
+        //Get image (UIImage)
+        NSArray * enclosureArray = item.enclosures;
+        NSDictionary *enclosureDict = enclosureArray[0];
+        NSURL * imageUrl = [NSURL URLWithString:[enclosureDict valueForKey:@"url"]];
+        NSData * data = [[NSData alloc] initWithContentsOfURL:imageUrl];
+        UIImage * storyImage = [[UIImage alloc] initWithData:data];
+        
+        //Get link (NSURL)
+        NSURL * linkURL = [NSURL URLWithString:item.link];
+        
+        //Get date (NSDate)
+        NSDate *date = item.date;
+        
+        NSArray *itemEntry = [NSArray arrayWithObjects: title, storyImage, linkURL, date, nil];
+        [self.womenRSSArray addObject:itemEntry];
+    }
+}
+
+
+- (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
+    NSLog(@"Parsed Feed Item: “%@”", item.title);
+    if (item) [parsedItems addObject:item];
 }
 
 @end

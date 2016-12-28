@@ -8,13 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "roster.h"
+#import "MWFeedParser.h"
+#import "MWFeedItem.h"
+#import "MWFeedInfo.h"
+#import "NSString+HTML.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, MWFeedParserDelegate>{
+    MWFeedParser *feedParser;
+    NSMutableArray *parsedItems;
+    
+}
 
 @property roster * mBballRoster;
 @property roster * wBballRoster;
+@property NSMutableArray * womenRSSArray;
+@property NSMutableArray * menRSSArray;
 
 @property (strong, nonatomic) UIWindow *window;
+
+-(void) getRSS;
 
 
 @end
