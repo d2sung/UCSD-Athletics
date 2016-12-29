@@ -23,13 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setStats];
-    
-    
 }
 
 
-
-/* Set scroll view
+/* viewDidLayoutSubviews:
+ * Set scroll view
  * Set gradient colors
  */
 -(void)viewDidLayoutSubviews{
@@ -40,11 +38,13 @@
     
     [self.playerScrollView layoutIfNeeded];
     self.playerScrollView.contentSize = self.playerContentView.bounds.size;
+    
     //Set gradient layer
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.playerContentView.bounds;
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.96 green:0.80 blue:0.05 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0] CGColor], nil];
     gradient.locations = @[@0.0, @0.55];
+    
     [self.playerContentView.layer insertSublayer:gradient atIndex:0];
 }
 
@@ -62,15 +62,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
-
-
-
-
-/* Set stats and bio of player
- *
+/* setStats:
+ * Get player bio and stats and assign to corresponding text label
  */
 -(void)setStats{
     

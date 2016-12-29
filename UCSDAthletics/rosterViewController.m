@@ -20,7 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupStyle];
     
+    
+    //Get AppDelegate and defaults
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -35,16 +38,10 @@
         self -> teamTable = appDelegate.wBballRoster.teamArray;
     }
     
-    
-    
-    
-    self.rosterView.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95];
-    
-    
-    
     //Sort array alphabetically
     self -> teamTable = [self -> teamTable sortedArrayUsingSelector:@selector(compare:)];
     
+    //Set Delegates
     self.tableViewObject.dataSource = self;
     self.tableViewObject.delegate = self;
 }
@@ -73,7 +70,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    
     playerProfile *player = [self->teamTable objectAtIndex: indexPath.row];
     
     //Set label of cell to player
@@ -88,13 +84,11 @@
             cell.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0];
         else
             cell.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.96];
-        
     }
     
     //If cell name is TEAM TOTAL
-    else {
+    else
         cell.textLabel.text = @"- Team Totals - ";
-    }
     
     return cell;
 }
@@ -108,7 +102,6 @@
     [self performSegueWithIdentifier:@"playerSegue" sender:self];
 }
 
-
 /* prepareForSegue:
  * Set the player variable accordingly before segueing to destination view (playerViewController)
  */
@@ -117,8 +110,10 @@
     
     playerController.player = [self -> teamTable objectAtIndex: selectedIndex];
     
+}
 
-    
+-(void) setupStyle {
+    self.view.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95];
 }
 
 @end

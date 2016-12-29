@@ -14,5 +14,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *storyImageView;
 @property (weak, nonatomic) IBOutlet UITextView *storyTextView;
+@property (weak, nonatomic) IBOutlet UIScrollView *storyScrollView;
+@property (weak, nonatomic) IBOutlet UIView *storyContentView;
+
+-(void) style;
+-(void) htmlToStoryTextView;
+    
+
 
 @end

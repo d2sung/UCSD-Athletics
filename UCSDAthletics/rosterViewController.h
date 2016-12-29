@@ -10,15 +10,14 @@
 #import "playerProfile.h"
 #import "roster.h"
 
-@interface rosterViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
-    
+@interface rosterViewController : UIViewController <UITableViewDataSource,UITableViewDelegate> {
     roster * teamRoster;
     NSArray * teamTable;
     NSInteger selectedIndex;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewObject;
-@property (strong, nonatomic) IBOutlet UIView *rosterView;
+-(void) setupStyle;
 
 
 @end

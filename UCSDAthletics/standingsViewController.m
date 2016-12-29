@@ -18,19 +18,15 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSURL *url;
     
-    if ([defaults boolForKey:@"gender"]){
+    //Get URL of either men or women
+    if ([defaults boolForKey:@"gender"])
         url = [NSURL URLWithString: @"http://www.goccaa.org/standings.aspx?standings=79&path=mbball"];
-    }
-    
-    else{
+    else
         url = [NSURL URLWithString: @"http://www.goccaa.org/standings.aspx?standings=82&path=wbball"];
-    }
     
+    //Open URL to webview
     NSURLRequest *requestURL = [NSURLRequest requestWithURL:url];
-    
     [self.webView loadRequest:requestURL];
-    
-    
 }
 
 @end

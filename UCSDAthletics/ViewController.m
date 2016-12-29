@@ -20,23 +20,29 @@
 
 - (IBAction)wBasketball:(id)sender {
 }
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Set bar color
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95];
+    
+    //Set arrow color
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    
+    //Set text color
+    [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 
 /* prepareForSegue:
- * Determines the gender segue and sets genderString in sportController accordingly
+ * Determines the gender segue and sets default with key "gender" accordingly
  */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     

@@ -10,6 +10,7 @@
 		0333D68384E7835E11920788 /* libPods-UCSDAthleticsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E43D370F115E1506D9170203 /* libPods-UCSDAthleticsUITests.a */; };
 		701C20479F48327FEF617A17 /* libPods-UCSDAthletics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB29964638AA481BC23E8C7 /* libPods-UCSDAthletics.a */; };
 		8322BB837BE30FFA046046AC /* libPods-UCSDAthleticsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98BBF2F26A7E594A73063DB2 /* libPods-UCSDAthleticsTests.a */; };
+		8C0079601E15082800FB4AD0 /* Open_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 8C00795F1E15082800FB4AD0 /* Open_Sans */; };
 		8C4BD04D1E112A830093D129 /* standingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BD04C1E112A830093D129 /* standingsViewController.m */; };
 		8C4BD09B1E1365290093D129 /* sportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BD09A1E1365290093D129 /* sportViewController.m */; };
 		8C9C84DE1E0CCAEE0087FDA7 /* bioParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9C84DD1E0CCAEE0087FDA7 /* bioParser.m */; };
@@ -54,6 +55,7 @@
 		449E51241A8E85C221B88D11 /* Pods-UCSDAthleticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSDAthleticsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSDAthleticsTests/Pods-UCSDAthleticsTests.release.xcconfig"; sourceTree = "<group>"; };
 		72A9A6A0D532FDB8DE8FEC2F /* Pods-UCSDAthleticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSDAthleticsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSDAthleticsTests/Pods-UCSDAthleticsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		871D9E215394C762F72057A5 /* Pods-UCSDAthletics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSDAthletics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSDAthletics/Pods-UCSDAthletics.debug.xcconfig"; sourceTree = "<group>"; };
+		8C00795F1E15082800FB4AD0 /* Open_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Open_Sans; path = ../../../../Downloads/Open_Sans; sourceTree = "<group>"; };
 		8C4BD04B1E112A830093D129 /* standingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = standingsViewController.h; sourceTree = "<group>"; };
 		8C4BD04C1E112A830093D129 /* standingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = standingsViewController.m; sourceTree = "<group>"; };
 		8C4BD0991E1365290093D129 /* sportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sportViewController.h; sourceTree = "<group>"; };
@@ -160,16 +162,16 @@
 				8CE6BD791E0B59F2000D0CCE /* AppDelegate.m */,
 				8CE6BD7B1E0B59F2000D0CCE /* ViewController.h */,
 				8CE6BD7C1E0B59F2000D0CCE /* ViewController.m */,
+				8C4BD0991E1365290093D129 /* sportViewController.h */,
+				8C4BD09A1E1365290093D129 /* sportViewController.m */,
+				8CAC0D5F1E139BFE00ED94D8 /* storyViewController.h */,
+				8CAC0D601E139BFE00ED94D8 /* storyViewController.m */,
+				8C4BD04B1E112A830093D129 /* standingsViewController.h */,
+				8C4BD04C1E112A830093D129 /* standingsViewController.m */,
 				8CE6BDC71E0BBFBB000D0CCE /* rosterViewController.h */,
 				8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */,
 				8CE6BDC41E0B98C1000D0CCE /* playerProfileViewController.h */,
-				8CAC0D5F1E139BFE00ED94D8 /* storyViewController.h */,
-				8CAC0D601E139BFE00ED94D8 /* storyViewController.m */,
 				8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */,
-				8C4BD04B1E112A830093D129 /* standingsViewController.h */,
-				8C4BD04C1E112A830093D129 /* standingsViewController.m */,
-				8C4BD0991E1365290093D129 /* sportViewController.h */,
-				8C4BD09A1E1365290093D129 /* sportViewController.m */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 		8CE6BD751E0B59F2000D0CCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C00795F1E15082800FB4AD0 /* Open_Sans */,
 				8CE6BD761E0B59F2000D0CCE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -370,6 +373,7 @@
 				8CE6BD851E0B59F2000D0CCE /* LaunchScreen.storyboard in Resources */,
 				8CE6BD821E0B59F2000D0CCE /* Assets.xcassets in Resources */,
 				8CE6BD801E0B59F2000D0CCE /* Main.storyboard in Resources */,
+				8C0079601E15082800FB4AD0 /* Open_Sans in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

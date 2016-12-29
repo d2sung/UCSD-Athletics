@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface standingsViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIWebView * webView;
+    @property (strong, nonatomic) IBOutlet UIWebView * webView;
 
 @end
