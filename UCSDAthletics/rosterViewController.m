@@ -78,12 +78,12 @@
         NSString *fullName = [ player.lName stringByAppendingString: comma];
         fullName = [fullName stringByAppendingString: player.fName];
         cell.textLabel.text = fullName;
-        cell.textLabel.textColor = [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:1.0];
+        cell.textLabel.textColor = [UIColor blackColor];
         
         if(indexPath.row % 2 == 0)
-            cell.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0];
+            cell.backgroundColor = [UIColor whiteColor];
         else
-            cell.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.96];
+            cell.backgroundColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];
     }
     
     //If cell name is TEAM TOTAL

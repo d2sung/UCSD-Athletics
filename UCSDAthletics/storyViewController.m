@@ -74,8 +74,7 @@
     //Text Colors
     self.storyTextView.textColor = [UIColor blackColor];
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.titleLabel.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1];
-
+    self.titleLabel.backgroundColor = [UIColor colorWithRed:0.02 green:0.16 blue:0.36 alpha:1.0];
 }
 
 
@@ -110,7 +109,7 @@
     
    
     
-    NSString * htmlString = [NSString stringWithFormat:@"<html><div style='color:#000000; font-size:11px; font-family:HelveticaNeue;'>%@</div></html>", storyString];
+    NSString * htmlString = [NSString stringWithFormat:@"<html><div style='color:#000000; font-size:13px; font-family:HelveticaNeue;'>%@</div></html>", storyString];
     
      NSMutableAttributedString *insertString = [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]} documentAttributes:nil error:nil];
 

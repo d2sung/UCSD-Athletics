@@ -60,7 +60,7 @@
 -(void)setupMen {
     self.title = @"Men's Basketball Headlines";
     [self.tabBarController setTitle:@"Men's Basketball"];
-    [[self.tabBarController.tabBar.items objectAtIndex:0] initWithTitle: @"Men's Basketball" image:[UIImage imageNamed:@"basketball"] tag: 0];
+    [[self.tabBarController.tabBar.items objectAtIndex:0] initWithTitle: @"News" image:[UIImage imageNamed:@"basketball"] tag: 0];
 }
 
 /*setupWomen:
@@ -68,7 +68,7 @@
  */
 -(void)setupWomen {
     [self.tabBarController setTitle:@"Women's Basketball"];
-    [[self.tabBarController.tabBar.items objectAtIndex:0] initWithTitle: @"Women's Basketball" image:[UIImage imageNamed:@"basketball"]tag:0];
+    [[self.tabBarController.tabBar.items objectAtIndex:0] initWithTitle: @"News" image:[UIImage imageNamed:@"basketball"]tag:0];
     
 }
 
@@ -122,7 +122,9 @@
     [[self.tabBarController.tabBar.items objectAtIndex:2] initWithTitle: @"Roster" image:[UIImage imageNamed:@"roster"] tag: 2];
     [[self.tabBarController.tabBar.items objectAtIndex:3] initWithTitle: @"Standings" image:[UIImage imageNamed:@"standings"] tag: 3];
     
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95]];
+    [[self.tabBarController.tabBar.items objectAtIndex:4] initWithTitle:@"Team" image: [UIImage imageNamed:@"trident" ] tag:4];
+    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.02 green:0.16 blue:0.36 alpha:1.0]];
     [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1.0]];
 
 }

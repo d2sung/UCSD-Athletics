@@ -11,6 +11,8 @@
 		701C20479F48327FEF617A17 /* libPods-UCSDAthletics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB29964638AA481BC23E8C7 /* libPods-UCSDAthletics.a */; };
 		8322BB837BE30FFA046046AC /* libPods-UCSDAthleticsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98BBF2F26A7E594A73063DB2 /* libPods-UCSDAthleticsTests.a */; };
 		8C0079601E15082800FB4AD0 /* Open_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 8C00795F1E15082800FB4AD0 /* Open_Sans */; };
+		8C20273A1E15F115004984AE /* teamControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2027391E15F115004984AE /* teamControllerView.m */; };
+		8C20273D1E161D61004984AE /* scheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C20273C1E161D61004984AE /* scheduleViewController.m */; };
 		8C4BD04D1E112A830093D129 /* standingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BD04C1E112A830093D129 /* standingsViewController.m */; };
 		8C4BD09B1E1365290093D129 /* sportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BD09A1E1365290093D129 /* sportViewController.m */; };
 		8C9C84DE1E0CCAEE0087FDA7 /* bioParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9C84DD1E0CCAEE0087FDA7 /* bioParser.m */; };
@@ -56,6 +58,10 @@
 		72A9A6A0D532FDB8DE8FEC2F /* Pods-UCSDAthleticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSDAthleticsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSDAthleticsTests/Pods-UCSDAthleticsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		871D9E215394C762F72057A5 /* Pods-UCSDAthletics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSDAthletics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSDAthletics/Pods-UCSDAthletics.debug.xcconfig"; sourceTree = "<group>"; };
 		8C00795F1E15082800FB4AD0 /* Open_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Open_Sans; path = ../../../../Downloads/Open_Sans; sourceTree = "<group>"; };
+		8C2027381E15F115004984AE /* teamControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teamControllerView.h; sourceTree = "<group>"; };
+		8C2027391E15F115004984AE /* teamControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teamControllerView.m; sourceTree = "<group>"; };
+		8C20273B1E161D61004984AE /* scheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scheduleViewController.h; sourceTree = "<group>"; };
+		8C20273C1E161D61004984AE /* scheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scheduleViewController.m; sourceTree = "<group>"; };
 		8C4BD04B1E112A830093D129 /* standingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = standingsViewController.h; sourceTree = "<group>"; };
 		8C4BD04C1E112A830093D129 /* standingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = standingsViewController.m; sourceTree = "<group>"; };
 		8C4BD0991E1365290093D129 /* sportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sportViewController.h; sourceTree = "<group>"; };
@@ -155,25 +161,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8CA7E4DF1E0D001C002D1995 /* App */ = {
+		8C20273E1E161D70004984AE /* Child Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6BDC41E0B98C1000D0CCE /* playerProfileViewController.h */,
+				8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */,
+				8CAC0D5F1E139BFE00ED94D8 /* storyViewController.h */,
+				8CAC0D601E139BFE00ED94D8 /* storyViewController.m */,
+			);
+			name = "Child Views";
+			sourceTree = "<group>";
+		};
+		8CA7E4DF1E0D001C002D1995 /* Parent Views */ = {
 			isa = PBXGroup;
 			children = (
 				8CE6BD781E0B59F2000D0CCE /* AppDelegate.h */,
 				8CE6BD791E0B59F2000D0CCE /* AppDelegate.m */,
 				8CE6BD7B1E0B59F2000D0CCE /* ViewController.h */,
 				8CE6BD7C1E0B59F2000D0CCE /* ViewController.m */,
+				8C2027381E15F115004984AE /* teamControllerView.h */,
+				8C2027391E15F115004984AE /* teamControllerView.m */,
 				8C4BD0991E1365290093D129 /* sportViewController.h */,
 				8C4BD09A1E1365290093D129 /* sportViewController.m */,
-				8CAC0D5F1E139BFE00ED94D8 /* storyViewController.h */,
-				8CAC0D601E139BFE00ED94D8 /* storyViewController.m */,
 				8C4BD04B1E112A830093D129 /* standingsViewController.h */,
 				8C4BD04C1E112A830093D129 /* standingsViewController.m */,
 				8CE6BDC71E0BBFBB000D0CCE /* rosterViewController.h */,
 				8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */,
-				8CE6BDC41E0B98C1000D0CCE /* playerProfileViewController.h */,
-				8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */,
+				8C20273B1E161D61004984AE /* scheduleViewController.h */,
+				8C20273C1E161D61004984AE /* scheduleViewController.m */,
 			);
-			name = App;
+			name = "Parent Views";
 			sourceTree = "<group>";
 		};
 		8CE6BD691E0B59F1000D0CCE = {
@@ -201,8 +218,9 @@
 		8CE6BD741E0B59F2000D0CCE /* UCSDAthletics */ = {
 			isa = PBXGroup;
 			children = (
+				8C20273E1E161D70004984AE /* Child Views */,
 				8CE6BDBD1E0B88CF000D0CCE /* Parser */,
-				8CA7E4DF1E0D001C002D1995 /* App */,
+				8CA7E4DF1E0D001C002D1995 /* Parent Views */,
 				8CE6BD811E0B59F2000D0CCE /* Assets.xcassets */,
 				8CE6BD7E1E0B59F2000D0CCE /* Main.storyboard */,
 				8CE6BD831E0B59F2000D0CCE /* LaunchScreen.storyboard */,
@@ -543,6 +561,7 @@
 				8CAC0D611E139BFE00ED94D8 /* storyViewController.m in Sources */,
 				8CAC0D671E13A69A00ED94D8 /* HTMLParser.m in Sources */,
 				8CE6BDC61E0B98C1000D0CCE /* playerProfileViewController.m in Sources */,
+				8C20273A1E15F115004984AE /* teamControllerView.m in Sources */,
 				8C4BD04D1E112A830093D129 /* standingsViewController.m in Sources */,
 				8CE6BD7A1E0B59F2000D0CCE /* AppDelegate.m in Sources */,
 				8CE6BD771E0B59F2000D0CCE /* main.m in Sources */,
@@ -550,6 +569,7 @@
 				8CAC0D661E13A69A00ED94D8 /* HTMLNode.m in Sources */,
 				8CE6BDBA1E0B88BC000D0CCE /* playerProfile.m in Sources */,
 				8C9C84DE1E0CCAEE0087FDA7 /* bioParser.m in Sources */,
+				8C20273D1E161D61004984AE /* scheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,9 +30,26 @@
     
     self.womenRSSArray = [[NSMutableArray alloc] init];
     self.menRSSArray = [[NSMutableArray alloc] init];
+    self.womenTeamPlayer = self.wBballRoster.teamPlayer;
+    self.menTeamPlayer = self.mBballRoster.teamPlayer;
     
     
     [self getRSS];
+    
+    self.wPastGames = [[NSMutableArray alloc] init];
+    self.wUpcomingGames = [[NSMutableArray alloc] init];
+    
+    self.mPastGames = [[NSMutableArray alloc] init];
+    self.mUpcomingGames = [[NSMutableArray alloc] init];
+    
+    [self getPastGames];
+    [self getUpcomingGames];
+    
+    //NSLog(@"%d", [self.allGames count]);
+    
+    for (NSArray* array in self.wUpcomingGames){
+        NSLog(@"%@: %@", array[0], array[1]);
+    }
     
     return YES;
 }
@@ -125,6 +142,113 @@
         [self.womenRSSArray addObject:itemEntry];
     }
 }
+
+-(void) getPastGames {
+    [parsedItems removeAllObjects];
+    [feedParser stopParsing];
+    
+    feedParser = [[MWFeedParser alloc] initWithFeedURL: [NSURL URLWithString: @"http://www.ucsdtritons.com/rss.dbml?db_oem_id=5800&RSS_SPORT_ID=2337&media=results"]];
+    
+    feedParser.delegate = self;
+    feedParser.feedParseType = ParseTypeFull;
+    feedParser.connectionType = ConnectionTypeSynchronously;
+    [feedParser parse];
+    
+    for (int i = 0; i < [parsedItems count]; i++){
+        MWFeedItem *item = parsedItems[i];
+        NSString *title = item.title ? [item.title stringByDecodingHTMLEntities]: @"[No Title]";
+        
+        //Get Description
+        
+        NSString * description = [item summary];
+        
+        
+        NSArray *itemEntry = [NSArray arrayWithObjects: title, description, nil];
+        [self.mPastGames addObject:itemEntry];
+    }
+    
+    
+    //Get women
+    [parsedItems removeAllObjects];
+    [feedParser stopParsing];
+    
+    feedParser = [[MWFeedParser alloc] initWithFeedURL: [NSURL URLWithString: @"http://www.ucsdtritons.com/rss.dbml?db_oem_id=5800&RSS_SPORT_ID=2338&media=results"]];
+    
+    feedParser.delegate = self;
+    feedParser.feedParseType = ParseTypeFull;
+    feedParser.connectionType = ConnectionTypeSynchronously;
+    [feedParser parse];
+    
+    for (int i = 0; i < [parsedItems count]; i++){
+        MWFeedItem *item = parsedItems[i];
+        NSString *title = item.title ? [item.title stringByDecodingHTMLEntities]: @"[No Title]";
+       
+        
+        //Get Description
+        
+        NSString * description = [item summary];
+        
+        
+        NSArray *itemEntry = [NSArray arrayWithObjects: title, description, nil];
+        [self.wPastGames insertObject:itemEntry atIndex:0];
+    }
+    
+    
+    
+}
+
+
+-(void) getUpcomingGames {
+    [parsedItems removeAllObjects];
+    [feedParser stopParsing];
+    
+    feedParser = [[MWFeedParser alloc] initWithFeedURL: [NSURL URLWithString: @"http://www.ucsdtritons.com/rss.dbml?db_oem_id=5800&RSS_SPORT_ID=2337&media=schedules"]];
+    
+    feedParser.delegate = self;
+    feedParser.feedParseType = ParseTypeFull;
+    feedParser.connectionType = ConnectionTypeSynchronously;
+    [feedParser parse];
+    
+    for (int i = 0; i < [parsedItems count]; i++){
+        MWFeedItem *item = parsedItems[i];
+        NSString *title = item.title ? [item.title stringByDecodingHTMLEntities]: @"[No Title]";
+        
+        //Get Description
+        
+        NSString * description = [item summary];
+        
+        
+        NSArray *itemEntry = [NSArray arrayWithObjects: title, description, nil];
+        [self.mUpcomingGames addObject:itemEntry];
+    }
+    
+    
+        
+    //Women upcoming games
+    [parsedItems removeAllObjects];
+    [feedParser stopParsing];
+        
+    feedParser = [[MWFeedParser alloc] initWithFeedURL: [NSURL URLWithString: @"http://www.ucsdtritons.com/rss.dbml?db_oem_id=5800&RSS_SPORT_ID=2338&media=schedules"]];
+        
+    feedParser.delegate = self;
+    feedParser.feedParseType = ParseTypeFull;
+    feedParser.connectionType = ConnectionTypeSynchronously;
+    [feedParser parse];
+        
+    for (int i = 0; i < [parsedItems count]; i++){
+        MWFeedItem *item = parsedItems[i];
+        NSString *title = item.title ? [item.title stringByDecodingHTMLEntities]: @"[No Title]";
+            
+        //Get Description
+            
+        NSString * description = [item summary];
+            
+            
+        NSArray *itemEntry = [NSArray arrayWithObjects: title, description, nil];
+        [self.wUpcomingGames addObject:itemEntry];
+    }
+}
+
 
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {

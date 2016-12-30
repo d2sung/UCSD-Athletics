@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "roster.h"
+#import "playerProfile.h"
 #import "MWFeedParser.h"
 #import "MWFeedItem.h"
 #import "MWFeedInfo.h"
@@ -23,6 +24,17 @@
 @property roster * wBballRoster;
 @property NSMutableArray * womenRSSArray;
 @property NSMutableArray * menRSSArray;
+@property playerProfile * womenTeamPlayer;
+@property playerProfile * menTeamPlayer;
+
+@property NSMutableArray *wPastGames;
+@property NSMutableArray *wUpcomingGames;
+
+@property NSMutableArray *mPastGames;
+@property NSMutableArray *mUpcomingGames;
+
+
+
 
 @property (strong, nonatomic) UIWindow *window;
 

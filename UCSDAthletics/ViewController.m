@@ -24,10 +24,12 @@
     [super viewDidLoad];
     
     //Set bar color
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:0.95];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.02 green:0.16 blue:0.36 alpha:1.0];
     
     //Set arrow color
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    
+    [self.navigationItem.backBarButtonItem setTitle:@" "];
     
     //Set text color
     [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor whiteColor]}];
