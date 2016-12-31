@@ -10,14 +10,16 @@
 #import "AppDelegate.h"
 #import "HTMLParser.h"
 #import "HTMLNode.h"
+#import "gameViewController.h"
 #import <UIKit/UIKit.h>
 
 @implementation scheduleViewController
 
 -(void) viewDidLoad {
+    [super viewDidLoad];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+    self.view.backgroundColor = [UIColor lightGrayColor];
     self.y = 0;
     //Setup views
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, 455)];
@@ -58,7 +60,7 @@
     for (int i = 0; i < [self.pastGames count]; i++){
         //Create buttons
         UIView *view = [[UIView alloc] initWithFrame: CGRectMake(0, self.y, 320, 150)];
-        view.backgroundColor = [UIColor lightGrayColor];
+        view.backgroundColor = [UIColor whiteColor];
         
         NSArray * gameDetails = [self getGameDetails:i];
         
@@ -77,11 +79,21 @@
         ucsdScore.text = gameDetails[2];
         opponentScore.text = gameDetails[3];
         
-        ucsd.textColor = [UIColor whiteColor];
-        opponent.textColor = [UIColor whiteColor];
-        date.textColor = [UIColor whiteColor];
-        ucsdScore.textColor = [UIColor whiteColor];
-        opponentScore.textColor = [UIColor whiteColor];
+        ucsd.textColor = [UIColor blackColor];
+        opponent.textColor = [UIColor blackColor];
+        date.textColor = [UIColor blackColor];
+        
+        
+        if ([ucsdScore.text integerValue] > [opponentScore.text integerValue]){
+            ucsdScore.textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];            opponentScore.textColor = [UIColor blackColor];
+            
+        }
+        
+        else {
+            ucsdScore.textColor = [UIColor blackColor];
+            opponentScore.textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];;
+        }
+        
         
         opponent.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
         ucsd.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
@@ -92,6 +104,12 @@
         
         UIButton *button = [[UIButton alloc] initWithFrame: CGRectMake(0, self.y, 320, 150)];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+        button.tag = i;
+        
+        [button addTarget:self
+                   action:@selector(pushMyNewViewController:)
+         forControlEvents:UIControlEventTouchUpInside];
         
         [view addSubview: ucsd];
         [view addSubview: opponent];
@@ -125,9 +143,9 @@
             opponent.numberOfLines = 2;
             date.text = gameDetails[1];
             
-            ucsd.textColor = [UIColor whiteColor];
-            opponent.textColor = [UIColor whiteColor];
-            date.textColor = [UIColor whiteColor];
+            ucsd.textColor = [UIColor blackColor];
+            opponent.textColor = [UIColor blackColor];
+            date.textColor = [UIColor blackColor];
 
             opponent.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
             ucsd.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
@@ -136,7 +154,6 @@
             [view addSubview: ucsd];
             [view addSubview: opponent];
             [view addSubview: date];
-
             
             self.y = self.y + 151;
         }
@@ -145,7 +162,6 @@
 
 
 -(NSArray*) getGameDetails: (int) i {
- 
     NSString * gameDetails = self.pastGames[i][0];
     NSMutableString * opponent = [[NSMutableString alloc] init];
     int j = 0;
@@ -163,6 +179,7 @@
         [opponent appendFormat:@"%c", [gameDetails characterAtIndex:j]];
         j++;
     }
+    
     opponent = [opponent substringToIndex:[opponent length] - 2];
     
     //Get date
@@ -175,15 +192,12 @@
     
     j = j+7;
     
-    
     //Get tritons score
     NSMutableString * tritonScore = [[NSMutableString alloc] init];
     while ([gameDetails characterAtIndex:j] != '-'){
         [tritonScore appendFormat:@"%c", [gameDetails characterAtIndex:j]];
         j++;
     }
-    
-    
     
     j++;
     
@@ -205,7 +219,7 @@
 
 
 
--(void) getStatsURL: (int) i {
+-(NSString *) getStatsURL: (int) i {
     NSString* description = self.pastGames[i][1];
     
     NSError *error = nil;
@@ -214,7 +228,7 @@
     
     if (error){
         NSLog(@"Error: %@", error);
-        return;
+        return nil;
     }
     
     HTMLNode *bodyNode = [parser body];
@@ -247,7 +261,7 @@
         index++;
     }
     
-       NSLog(statsURL);
+    return statsURL;
 }
 
 -(NSArray *) getUpcomingGameDetail: (int) i {
@@ -285,6 +299,17 @@
     
     return retArray;
     
+}
+
+- (IBAction)pushMyNewViewController: (id) sender {
+   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    gameViewController *nextVC  = [storyboard instantiateViewControllerWithIdentifier:@"gameViewController"];
+    
+    UIButton *button = (UIButton *)sender;
+    nextVC.gameDetailsLink = [self getStatsURL: button.tag];
+    
+    [self.navigationController pushViewController:nextVC animated:YES];
 }
 
     

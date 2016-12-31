@@ -18,7 +18,7 @@
 
 -(void)createPastGameTiles;
 -(void)createUpcomingGameTiles;
--(void)getStatsURL:(int) i;
+-(NSString *)getStatsURL:(int) i;
 -(NSArray *) getUpcomingGameDetail: (int) i;
 
 @end

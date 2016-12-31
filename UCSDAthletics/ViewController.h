@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
-
+@property (weak, nonatomic) IBOutlet UIButton *womensLabel;
+@property (weak, nonatomic) IBOutlet UIButton *mensLabel;
 @end
 

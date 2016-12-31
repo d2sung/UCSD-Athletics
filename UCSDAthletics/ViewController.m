@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "sportViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
@@ -35,6 +36,15 @@
     [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     self.navigationController.navigationBar.translucent = NO;
+    
+    self.mensLabel.layer.cornerRadius = 30;
+    self.mensLabel.clipsToBounds = YES;
+    
+    
+    self.womensLabel.layer.cornerRadius = 20;
+    self.womensLabel.clipsToBounds = YES;
+
+
 }
 
 - (void)didReceiveMemoryWarning {

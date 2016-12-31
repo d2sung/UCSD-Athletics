@@ -26,9 +26,12 @@
     }
     
     else {
-        self.teamLabel.text = @"UC San Diego Men's Basketball";
+        self.teamLabel.text = @"UC San Diego Women's Basketball";
         self.teamPlayer = appDelegate.womenTeamPlayer;
     }
+    
+    self.teamLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.teamLabel.numberOfLines = 3;
     
     self.ptsLabel.text = [NSString stringWithFormat:@"%.01f", self.teamPlayer.ppg];
     self.fgLabel.text = [NSString stringWithFormat:@"%.01f", self.teamPlayer.fgPct * 100];

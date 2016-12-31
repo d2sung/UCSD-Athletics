@@ -33,6 +33,7 @@
 		8CE6BDBC1E0B88BC000D0CCE /* statsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDB91E0B88BC000D0CCE /* statsParser.m */; };
 		8CE6BDC61E0B98C1000D0CCE /* playerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */; };
 		8CE6BDC91E0BBFBB000D0CCE /* rosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */; };
+		8CFB0CE71E172D72004226C4 /* gameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB0CE61E172D72004226C4 /* gameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playerProfileViewController.m; sourceTree = "<group>"; };
 		8CE6BDC71E0BBFBB000D0CCE /* rosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rosterViewController.h; sourceTree = "<group>"; };
 		8CE6BDC81E0BBFBB000D0CCE /* rosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rosterViewController.m; sourceTree = "<group>"; };
+		8CFB0CE51E172D72004226C4 /* gameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gameViewController.h; path = ../gameViewController.h; sourceTree = "<group>"; };
+		8CFB0CE61E172D72004226C4 /* gameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gameViewController.m; path = ../gameViewController.m; sourceTree = "<group>"; };
 		8D681FC6043CA1B3B4A5CF84 /* Pods-UCSDAthleticsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSDAthleticsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSDAthleticsUITests/Pods-UCSDAthleticsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		98BBF2F26A7E594A73063DB2 /* libPods-UCSDAthleticsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UCSDAthleticsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C5E621BFF244DBF59A1B27 /* Pods-UCSDAthletics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSDAthletics.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSDAthletics/Pods-UCSDAthletics.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				8CE6BDC51E0B98C1000D0CCE /* playerProfileViewController.m */,
 				8CAC0D5F1E139BFE00ED94D8 /* storyViewController.h */,
 				8CAC0D601E139BFE00ED94D8 /* storyViewController.m */,
+				8CFB0CE51E172D72004226C4 /* gameViewController.h */,
+				8CFB0CE61E172D72004226C4 /* gameViewController.m */,
 			);
 			name = "Child Views";
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				8CAC0D611E139BFE00ED94D8 /* storyViewController.m in Sources */,
 				8CAC0D671E13A69A00ED94D8 /* HTMLParser.m in Sources */,
 				8CE6BDC61E0B98C1000D0CCE /* playerProfileViewController.m in Sources */,
+				8CFB0CE71E172D72004226C4 /* gameViewController.m in Sources */,
 				8C20273A1E15F115004984AE /* teamControllerView.m in Sources */,
 				8C4BD04D1E112A830093D129 /* standingsViewController.m in Sources */,
 				8CE6BD7A1E0B59F2000D0CCE /* AppDelegate.m in Sources */,

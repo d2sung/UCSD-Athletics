@@ -33,6 +33,9 @@
     self.womenTeamPlayer = self.wBballRoster.teamPlayer;
     self.menTeamPlayer = self.mBballRoster.teamPlayer;
     
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ucsd_logo"] forBarMetrics:UIBarMetricsDefault];
+
+    
     
     [self getRSS];
     
