@@ -428,10 +428,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" id="gKu-FG-5bL">
-                                <rect key="frame" x="10" y="14" width="110" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" id="gKu-FG-5bL">
+                                <rect key="frame" x="8" y="31" width="128" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UC San Diego" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" id="GAr-Cb-5x1">
+                                <rect key="frame" x="173" y="29" width="138" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -513,7 +520,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bench Pts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Va-TX-Mwh">
-                                <rect key="frame" x="120" y="440" width="78" height="21"/>
+                                <rect key="frame" x="120" y="463" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="0.019607843137254902" green="0.15686274509803921" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
@@ -638,20 +645,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="21X-V2-oyy">
-                                <rect key="frame" x="249" y="266" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QmN-iT-oFD">
-                                <rect key="frame" x="249" y="266" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tHM-nB-4FB">
                                 <rect key="frame" x="250" y="301" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -674,14 +667,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wCO-rQ-7tn">
-                                <rect key="frame" x="13" y="441" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6fE-NR-cXd">
-                                <rect key="frame" x="249" y="377" width="51" height="21"/>
+                                <rect key="frame" x="13" y="461" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -702,44 +688,79 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GXY-M5-Amd">
-                                <rect key="frame" x="249" y="444" width="51" height="21"/>
+                                <rect key="frame" x="249" y="464" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qmd-vC-2Jn">
-                                <rect key="frame" x="149" y="14" width="16" height="21"/>
+                                <rect key="frame" x="144" y="54" width="29" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JJ2-wy-zeh">
-                                <rect key="frame" x="10" y="53" width="75" height="39"/>
+                                <rect key="frame" x="8" y="59" width="75" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4wD-5R-lsc">
-                                <rect key="frame" x="236" y="54" width="75" height="39"/>
+                                <rect key="frame" x="236" y="59" width="75" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" id="A6S-4g-sLK">
-                                <rect key="frame" x="53" y="78" width="214" height="55"/>
+                                <rect key="frame" x="53" y="92" width="214" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K9W-sv-xfb">
+                                <rect key="frame" x="249" y="244" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UC San Diego" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" id="GAr-Cb-5x1">
-                                <rect key="frame" x="193" y="14" width="118" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QmN-iT-oFD">
+                                <rect key="frame" x="249" y="266" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2nd Chance Pts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfH-BQ-ltc">
+                                <rect key="frame" x="116" y="441" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="0.019607843140000001" green="0.15686274510000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CGJ-Ry-kRF">
+                                <rect key="frame" x="13" y="442" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4aK-Zt-v7D">
+                                <rect key="frame" x="249" y="442" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6fE-NR-cXd">
+                                <rect key="frame" x="249" y="377" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -752,6 +773,36 @@
                         <outlet property="awayTeam" destination="gKu-FG-5bL" id="pmf-ef-leZ"/>
                         <outlet property="dateLocationLabel" destination="A6S-4g-sLK" id="ReA-N2-FHb"/>
                         <outlet property="homeTeam" destination="GAr-Cb-5x1" id="eHU-d2-uFV"/>
+                        <outletCollection property="awayLabel" destination="sR9-he-0H0" id="haZ-TB-Vop"/>
+                        <outletCollection property="awayLabel" destination="9vK-EY-UM7" id="GZG-q3-Kpj"/>
+                        <outletCollection property="awayLabel" destination="DrC-WI-OAU" id="ncA-LH-naU"/>
+                        <outletCollection property="awayLabel" destination="kzZ-8A-uLu" id="oRr-TQ-HP4"/>
+                        <outletCollection property="awayLabel" destination="njV-hp-kkl" id="TDF-IM-JNo"/>
+                        <outletCollection property="awayLabel" destination="JJ2-wy-zeh" id="aLK-Or-r9V"/>
+                        <outletCollection property="awayLabel" destination="B2P-y1-zSQ" id="BAZ-NB-las"/>
+                        <outletCollection property="awayLabel" destination="u2r-RJ-cFt" id="llK-6z-egl"/>
+                        <outletCollection property="awayLabel" destination="iAQ-T0-Xqs" id="NRL-9A-U5n"/>
+                        <outletCollection property="awayLabel" destination="U07-6E-iq6" id="cj8-Pq-tzR"/>
+                        <outletCollection property="homeLabel" destination="HfC-v4-PeU" id="xtI-9i-Eaj"/>
+                        <outletCollection property="homeLabel" destination="K9W-sv-xfb" id="0KH-hi-2Il"/>
+                        <outletCollection property="homeLabel" destination="QmN-iT-oFD" id="LnR-si-ZbU"/>
+                        <outletCollection property="homeLabel" destination="TYN-Kg-vm7" id="W0i-z6-pKf"/>
+                        <outletCollection property="homeLabel" destination="yQP-XK-JD0" id="kj5-RU-tgF"/>
+                        <outletCollection property="homeLabel" destination="4wD-5R-lsc" id="iLW-qm-QEJ"/>
+                        <outletCollection property="homeLabel" destination="tHM-nB-4FB" id="C08-IS-fxS"/>
+                        <outletCollection property="homeLabel" destination="ysx-uH-VsC" id="ib1-16-WgB"/>
+                        <outletCollection property="homeLabel" destination="POB-0d-YSh" id="1uZ-SR-OQH"/>
+                        <outletCollection property="homeLabel" destination="FKQ-Hc-Tlk" id="HmO-q6-rWA"/>
+                        <outletCollection property="awayAnalysisLabels" destination="dB8-WR-X3h" id="dxr-DF-Xv0"/>
+                        <outletCollection property="awayAnalysisLabels" destination="1os-YB-sIC" id="RhC-uV-aGs"/>
+                        <outletCollection property="awayAnalysisLabels" destination="9At-Ln-vjc" id="3Dt-ZG-D5A"/>
+                        <outletCollection property="awayAnalysisLabels" destination="CGJ-Ry-kRF" id="nfp-mt-BwX"/>
+                        <outletCollection property="awayAnalysisLabels" destination="wCO-rQ-7tn" id="OKM-0D-T1b"/>
+                        <outletCollection property="homeAnalysisLabels" destination="6fE-NR-cXd" id="KB7-0t-wtP"/>
+                        <outletCollection property="homeAnalysisLabels" destination="TWR-po-VlV" id="LOK-a8-mlg"/>
+                        <outletCollection property="homeAnalysisLabels" destination="fKG-Fb-aKU" id="Ua1-9d-N5N"/>
+                        <outletCollection property="homeAnalysisLabels" destination="4aK-Zt-v7D" id="CZ5-He-0Pc"/>
+                        <outletCollection property="homeAnalysisLabels" destination="GXY-M5-Amd" id="0hb-zY-CqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vC1-yp-xEG" userLabel="First Responder" sceneMemberID="firstResponder"/>

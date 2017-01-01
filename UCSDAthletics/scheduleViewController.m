@@ -64,11 +64,11 @@
         
         NSArray * gameDetails = [self getGameDetails:i];
         
-        UILabel * opponent = [[UILabel alloc] initWithFrame: CGRectMake(10, 20, 140, 65)];
-        UILabel *opponentScore =[[UILabel alloc] initWithFrame: CGRectMake(10, 60, 90, 50)];
-        UILabel * ucsd = [[UILabel alloc] initWithFrame: CGRectMake(210, 20, 140, 65)];
-        UILabel *ucsdScore =[[UILabel alloc] initWithFrame: CGRectMake(294, 60, 90, 50)];
-        UILabel *date =[[UILabel alloc] initWithFrame: CGRectMake(10, 100, 140, 65)];
+        UILabel * opponent = [[UILabel alloc] initWithFrame: CGRectMake(10, 35, 140, 65)];
+        UILabel *opponentScore =[[UILabel alloc] initWithFrame: CGRectMake(10, 75, 90, 50)];
+        UILabel * ucsd = [[UILabel alloc] initWithFrame: CGRectMake(210, 35, 140, 65)];
+        UILabel *ucsdScore =[[UILabel alloc] initWithFrame: CGRectMake(294, 75, 90, 50)];
+        UILabel *date =[[UILabel alloc] initWithFrame: CGRectMake(10, -10, 140, 65)];
         
         
         ucsd.text = @"UC San Diego";

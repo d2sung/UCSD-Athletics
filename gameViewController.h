@@ -16,4 +16,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *homeTeam;
 @property (weak, nonatomic) IBOutlet UILabel *dateLocationLabel;
 
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *awayLabel;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *homeLabel;
+
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *awayAnalysisLabels;
+
+
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *homeAnalysisLabels;
+
+-(NSArray *) getPointsStats;
+
+
 @end
