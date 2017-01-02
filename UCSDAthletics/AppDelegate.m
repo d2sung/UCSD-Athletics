@@ -167,7 +167,7 @@
         
         
         NSArray *itemEntry = [NSArray arrayWithObjects: title, description, nil];
-        [self.mPastGames addObject:itemEntry];
+        [self.mPastGames insertObject:itemEntry atIndex:0];
     }
     
     

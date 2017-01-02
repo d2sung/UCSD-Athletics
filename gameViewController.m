@@ -15,6 +15,14 @@
 -(void) viewDidLoad{
     [super viewDidLoad];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSURL *url = [NSURL URLWithString:self.gameDetailsLink];
+
+    [defaults setURL:url forKey:@"gameURL"];
+    
+    [defaults synchronize];
+    
     NSArray * infoArray = [self getGameInfo];
     NSArray * statsArray = [self getStats];
     NSArray * playAnalysis = [self getPointsStats];
@@ -27,13 +35,32 @@
     //Set home stat labels
     NSArray *homeArray = statsArray[1];
     for (int i = 0; i < [homeArray count]; i++){
-            ((UILabel *)[self.homeLabel objectAtIndex:i]).text = homeArray[i];
+        NSString * percentage = @"";
+        
+        //If FG, 3PT OR FT LABEL, get percentage
+        if (i == 0 | i == 1 | i == 2){
+            NSArray *items = [homeArray[i] componentsSeparatedByString:@"-"];
+            
+            percentage = [NSString stringWithFormat:@"(%.2f%%)", [items[0] floatValue]/[items[1] floatValue] * 100];
+        }
+        
+        
+        ((UILabel *)[self.homeLabel objectAtIndex:i]).text = [NSString stringWithFormat:@"%@ %@", homeArray[i], percentage];
     }
     
     //Set away stat labels
     NSArray *awayArray = statsArray[0];
     for (int i = 0; i < [awayArray count]; i++){
-        ((UILabel *)[self.awayLabel objectAtIndex:i]).text = awayArray[i];
+         NSString * percentage = @"";
+        
+        if (i == 0 | i == 1 | i == 2){
+            NSArray *items = [awayArray[i] componentsSeparatedByString:@"-"];
+            
+            percentage = [NSString stringWithFormat:@"(%.2f%%)", [items[0] floatValue]/[items[1] floatValue] * 100];
+        }
+        
+        
+        ((UILabel *)[self.awayLabel objectAtIndex:i]).text = [NSString stringWithFormat:@"%@ %@", awayArray[i], percentage];
     }
     
     //Set play analysis labels
@@ -420,8 +447,27 @@
         }
     }
     
+    for (int i = 0; i<[self.homeAnalysisLabels count]; i++){
+        
+        if ([((UILabel *)[self.homeAnalysisLabels objectAtIndex:i]).text integerValue] > [((UILabel *)[self.awayAnalysisLabels objectAtIndex:i]).text integerValue]){
+            ((UILabel *)[self.homeAnalysisLabels objectAtIndex:i]).textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];
+        }
+        
+        else if ([((UILabel *)[self.homeAnalysisLabels objectAtIndex:i]).text integerValue] < [((UILabel *)[self.awayAnalysisLabels objectAtIndex:i]).text integerValue]){
+                ((UILabel *)[self.awayAnalysisLabels objectAtIndex:i]).textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];
+        }
+        
+        else {
+            
+        }
+    }
+    
     
 }
+
+
+
+
 
 
 @end

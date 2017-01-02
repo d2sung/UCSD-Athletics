@@ -61,7 +61,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
    
     if ([segue.identifier isEqualToString:@"menSegueIdentifier"]){
-         [defaults setInteger:true forKey:@"gender"];
+         [defaults setBool:true forKey:@"gender"];
     }
     
     else if ([segue.identifier isEqualToString: @"womenSegueIdentifier"]){

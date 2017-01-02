@@ -18,8 +18,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    NSLog([defaults boolForKey:@"gender"] ? @"yes" : @"no");
-    
     if([defaults boolForKey:@"gender"]){
         self.teamLabel.text = @"UC San Diego Men's Basketball";
         self.teamPlayer = appDelegate.menTeamPlayer;

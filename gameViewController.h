@@ -22,6 +22,8 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *awayAnalysisLabels;
 
 
+
+
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *homeAnalysisLabels;
 
 -(NSArray *) getPointsStats;
