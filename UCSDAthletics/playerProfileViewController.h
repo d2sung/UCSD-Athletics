@@ -52,6 +52,16 @@
 @property playerProfile *player;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
+@property NSArray *pastGames;
+@property NSArray *past3Games;
+
+
+//Last 3 games
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+
+
 
 //Set the stats of player, called in viewDidLoad
 -(void)setStats;

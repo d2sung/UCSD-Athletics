@@ -171,7 +171,7 @@
         HTMLNode *tdNode = inputNodes[i];
         
         //If the tdNode is the team total
-        if ([[tdNode rawContents] isEqualToString:@"<td align=\"left\"><font face=\"verdana\" size=\"1\" color=\"#000000\">Totals.............. </font></td>"]){
+        if ([[tdNode rawContents] isEqualToString:@"<td align=\"left\"><font face=\"verdana\" size=\"1\" color=\"#000000\">Totals.............. </font></td>"]){
             
             //Away stats
             if (statsCounter == 0){

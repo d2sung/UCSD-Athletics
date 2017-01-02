@@ -11,7 +11,9 @@
 #import "roster.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "AppDelegate.h"
+#import "HTMLParser.h"
+#import "HTMLNode.h"
 
 @interface playerProfileViewController ()
 
@@ -23,6 +25,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setStats];
+    
+    //Get last three games
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults boolForKey:@"gender"])
+        self.pastGames = appDelegate.mPastGames;
+    
+    else
+        self.pastGames = appDelegate.wPastGames;
+    
+    self.past3Games = [NSArray arrayWithObjects: self.pastGames[[self.pastGames count] -1], self.pastGames[[self.pastGames count] -2], self.pastGames[[self.pastGames count]-3], nil];
+    
+    for (NSArray *titleArray in [self getTitleforLastThreeGames]){
+        NSLog(@"TITLE: %@", titleArray);
+    }
+    
+    for (NSArray *statsArray in [self getPlayerStats]){
+        for (NSString *stats in statsArray){
+            NSLog(@"STATS: %@", stats);
+        }
+    }
+    
+    
+    
 }
 
 
@@ -46,6 +74,14 @@
     gradient.locations = @[@0.0, @0.55];
     
     [self.playerContentView.layer insertSublayer:gradient atIndex:0];
+    
+    
+    [self.scrollView layoutIfNeeded];
+    self.scrollView.contentSize = self.contentView.bounds.size;
+    
+    
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -123,6 +159,114 @@
     self.threeptPctValueLabel.text = [NSString stringWithFormat:@"%.01f", self.player.threePct*100];
 }
 
+-(NSArray*) getTitleforLastThreeGames {
+    NSMutableArray * retArray = [[NSMutableArray alloc]init];
+    
+    for (NSArray * gameArray in self.past3Games){
+        
+        NSArray *titleArray = [gameArray[0] componentsSeparatedByString:@":"];
+        NSString * gameTitle = titleArray[1];
+        
+        [retArray addObject: gameTitle];
+      }
+    
+    return retArray;
+}
+
+-(NSString *) getStatsURL: (int) i {
+    
+    NSMutableString *statsURL = [[NSMutableString alloc] init];
+        
+    NSString *descriptionString = self.past3Games[i][1];
+    
+    NSError *error = nil;
+    
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:descriptionString error:&error];
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return nil;
+        }
+        
+        HTMLNode *bodyNode = [parser body];
+        
+        NSArray *pNodes = [bodyNode findChildTags: @"p"];
+        
+        HTMLNode * attrNode;
+        for (HTMLNode *node in pNodes){
+            attrNode = [node findChildWithAttribute: @"href" matchingName: @"http://www.ucsdtritons.com" allowPartial:YES];
+        }
+        
+        NSString * nodeString = [attrNode rawContents];
+        int quoteMark = 0;
+        
+        int index = 0;
+        
+        while ( quoteMark < 3){
+            if ([nodeString characterAtIndex:index] == '"'){
+                quoteMark++;
+                index++;
+            }
+            
+            else {
+                index++;
+            }
+        }
+        
+        while ([nodeString characterAtIndex:index] != '"'){
+            [statsURL appendFormat:@"%c", [nodeString characterAtIndex:index]];
+            index++;
+        }
+    return statsURL;
+}
+
+-(NSArray *) getPlayerStats {
+    
+    NSMutableArray * retArray = [[NSMutableArray alloc]init];
+    
+    for (int i = 0; i < [self.past3Games count]; i++){
+        
+        NSString * url = [self getStatsURL:i];
+        
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        
+        NSString *htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSError *error = nil;
+        
+        HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString error:&error];
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return nil;
+        }
+        
+        HTMLNode *bodyNode = [parser body];
+        NSArray *inputNodes = [bodyNode findChildTags:@"td"];
+        NSArray * gameStatsArray = [[NSMutableArray alloc]init];
+        
+        
+        
+        for (int i = 0; i < [inputNodes count]; i++) {
+            
+            HTMLNode *tdNode = inputNodes[i];
+            
+            NSString *content = [NSString stringWithFormat: @"%@, %@\u00a0", self.player.lName, self.player.fName];
+            
+            //If the tdNode is the team total
+            if ([[tdNode allContents] isEqualToString:content]){
+                gameStatsArray = [NSArray arrayWithObjects: [inputNodes[i+2]allContents], [inputNodes[i+3]allContents], [inputNodes[i+4]allContents], [inputNodes[i+6]allContents], [inputNodes[i+7]allContents], [inputNodes[i+8]allContents], [inputNodes[i+9]allContents], [inputNodes[i+10]allContents], [inputNodes[i+11]allContents],[inputNodes[i+12]allContents], nil];
+                
+                    break;
+                
+                }
+        }
+        
+        [retArray addObject:gameStatsArray];
+    
+    }
+    return retArray;
+}
 
 
 @end
