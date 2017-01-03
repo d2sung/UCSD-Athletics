@@ -26,7 +26,8 @@
     NSArray * infoArray = [self getGameInfo];
     NSArray * statsArray = [self getStats];
     NSArray * playAnalysis = [self getPointsStats];
-
+    
+    
     //Set game info labels
     self.awayTeam.text = infoArray[0];
     self.homeTeam.text = infoArray[1];
@@ -148,6 +149,9 @@
 /*getStats:
  * Returns array of size 2, with first index holding away team stats and second holding home team stats
  */
+/*getStats:
+ * Returns array of size 2, with first index holding away team stats and second holding home team stats
+ */
 -(NSArray *) getStats {
     NSError *error = nil;
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.gameDetailsLink]];
@@ -164,15 +168,14 @@
     NSMutableArray * retArray = [[NSMutableArray alloc]init];
     
     int statsCounter = 0;   //Keeps track of which team
-   
+    
     
     for (int i = 0; i < [inputNodes count]; i++) {
         
         HTMLNode *tdNode = inputNodes[i];
         
         //If the tdNode is the team total
-        if ([[tdNode rawContents] isEqualToString:@"<td align=\"left\"><font face=\"verdana\" size=\"1\" color=\"#000000\">Totals.............. </font></td>"]){
-            
+        if ([[tdNode allContents] isEqualToString:@"Totals..............\u00a0"]){
             //Away stats
             if (statsCounter == 0){
                 NSArray *awayArray = [NSArray arrayWithObjects: [inputNodes[i+2]allContents], [inputNodes[i+3]allContents], [inputNodes[i+4]allContents], [inputNodes[i+6]allContents], [inputNodes[i+7]allContents], [inputNodes[i+8]allContents], [inputNodes[i+9]allContents], [inputNodes[i+10]allContents], [inputNodes[i+11]allContents],[inputNodes[i+12]allContents], nil];

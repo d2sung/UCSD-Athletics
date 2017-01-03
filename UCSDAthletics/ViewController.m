@@ -37,13 +37,14 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
-    self.mensLabel.layer.cornerRadius = 30;
+    /*
+    self.mensLabel.layer.cornerRadius = 5;
     self.mensLabel.clipsToBounds = YES;
     
     
-    self.womensLabel.layer.cornerRadius = 20;
+    self.womensLabel.layer.cornerRadius = 5;
     self.womensLabel.clipsToBounds = YES;
-
+*/
 
 }
 

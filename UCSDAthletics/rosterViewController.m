@@ -83,7 +83,7 @@
         if(indexPath.row % 2 == 0)
             cell.backgroundColor = [UIColor whiteColor];
         else
-            cell.backgroundColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];
+            cell.backgroundColor = [UIColor colorWithRed:0.87 green:0.87 blue:0.87 alpha:1.0];;
     }
     
     //If cell name is TEAM TOTAL

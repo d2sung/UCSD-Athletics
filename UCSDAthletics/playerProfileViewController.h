@@ -23,7 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *positionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *majorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *backgroundLabel;
-@property (weak, nonatomic) IBOutlet UILabel *prevSchool;
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ppgLabel;
@@ -60,8 +61,13 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UILabel *gameLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *gameLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *gameLabel3;
 
-
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *statsLabel1;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *statsLabel2;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *statsLabel3;
 
 //Set the stats of player, called in viewDidLoad
 -(void)setStats;

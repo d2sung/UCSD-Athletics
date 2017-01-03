@@ -264,7 +264,6 @@
         addingPlayer.major = [bParser parseStringEntry:bioSheet :bidx];
         bidx = [self iterateThroughCommas:bioSheet: bidx];
         addingPlayer.background = [bParser parseBackgroundEntry:bioSheet :bidx];
-        addingPlayer.prevSchool = [bParser parsePrevSchoo:bioSheet :bidx];
         bidx = [self iterateThroughCommas: bioSheet: bidx];
         
         //Makes sure we dont go out of bounds on string

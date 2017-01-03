@@ -39,16 +39,9 @@
     
     self.past3Games = [NSArray arrayWithObjects: self.pastGames[[self.pastGames count] -1], self.pastGames[[self.pastGames count] -2], self.pastGames[[self.pastGames count]-3], nil];
     
-    for (NSArray *titleArray in [self getTitleforLastThreeGames]){
-        NSLog(@"TITLE: %@", titleArray);
-    }
-    
-    for (NSArray *statsArray in [self getPlayerStats]){
-        for (NSString *stats in statsArray){
-            NSLog(@"STATS: %@", stats);
-        }
-    }
-    
+    [self setPastThreeGames];
+    [self.navigationItem setTitle:@" "];
+  
     
     
 }
@@ -61,7 +54,7 @@
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0];
+    self.view.backgroundColor = [UIColor colorWithRed:0.02 green:0.16 blue:0.36 alpha:1.0];
     self.yellowColorView.backgroundColor = [UIColor colorWithRed:0.96 green:0.80 blue:0.05 alpha:1.0];
     
     [self.playerScrollView layoutIfNeeded];
@@ -70,8 +63,8 @@
     //Set gradient layer
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.playerContentView.bounds;
-    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.96 green:0.80 blue:0.05 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.00 green:0.22 blue:0.44 alpha:1.0] CGColor], nil];
-    gradient.locations = @[@0.0, @0.55];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.96 green:0.80 blue:0.05 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.02 green:0.16 blue:0.36 alpha:1.0] CGColor], nil];
+    gradient.locations = @[@0.0, @0.45];
     
     [self.playerContentView.layer insertSublayer:gradient atIndex:0];
     
@@ -98,6 +91,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) setPastThreeGames {
+    NSArray * gameArray = [self getTitleforLastThreeGames];
+    
+    self.gameLabel1.text = gameArray[0];
+    self.gameLabel2.text = gameArray[1];
+    self.gameLabel3.text = gameArray[2];
+    
+    NSArray *statsArray = [self getPlayerStats];
+    //Set past three game labels
+    
+    
+    for (int x = 0; x < [statsArray[0] count]; x++){
+        UILabel *label = self.statsLabel1[x];
+        label.text = statsArray[0][x];
+    }
+    
+    for (int x = 0; x < [statsArray[0] count]; x++){
+        UILabel *label = self.statsLabel2[x];
+        label.text = statsArray[1][x];
+    }
+    
+    for (int x = 0; x < [statsArray[0] count]; x++){
+        UILabel *label = self.statsLabel3[x];
+        label.text = statsArray[2][x];
+    }
+
+}
+
 /* setStats:
  * Get player bio and stats and assign to corresponding text label
  */
@@ -109,7 +130,8 @@
     self.numberLabel.text = self.player.number;
     self.backgroundLabel.text = self.player.background;
     self.majorLabel.text = self.player.major;
-    self.prevSchool.text = self.player.prevSchool;
+    self.weightLabel.text = self.player.weight;
+    self.heightLabel.text = self.player.height;
     
     //Set position
     if ([self.player.position isEqual: @"G"])
@@ -255,8 +277,7 @@
             
             //If the tdNode is the team total
             if ([[tdNode allContents] isEqualToString:content]){
-                gameStatsArray = [NSArray arrayWithObjects: [inputNodes[i+2]allContents], [inputNodes[i+3]allContents], [inputNodes[i+4]allContents], [inputNodes[i+6]allContents], [inputNodes[i+7]allContents], [inputNodes[i+8]allContents], [inputNodes[i+9]allContents], [inputNodes[i+10]allContents], [inputNodes[i+11]allContents],[inputNodes[i+12]allContents], nil];
-                
+                gameStatsArray = [NSArray arrayWithObjects: [inputNodes[i+13]allContents], [inputNodes[i+8]allContents], [inputNodes[i+2]allContents], [inputNodes[i+3]allContents], [inputNodes[i+4]allContents], [inputNodes[i+6]allContents], [inputNodes[i+9]allContents], [inputNodes[i+12]allContents],[inputNodes[i+11]allContents], [inputNodes[i+10]allContents], [inputNodes[i+7]allContents], nil];
                     break;
                 
                 }
