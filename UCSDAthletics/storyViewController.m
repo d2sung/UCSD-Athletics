@@ -24,7 +24,7 @@
     
     //Set title of story
     self.titleLabel.text = self.storyArray[0];
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.textAlignment = NSTextAlignmentLeft;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.numberOfLines = 5;
     
@@ -74,7 +74,6 @@
     //Text Colors
     self.storyTextView.textColor = [UIColor blackColor];
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.titleLabel.backgroundColor = [UIColor colorWithRed:0.02 green:0.16 blue:0.36 alpha:1.0];
 }
 
 

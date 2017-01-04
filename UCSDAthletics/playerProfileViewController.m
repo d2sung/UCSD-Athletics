@@ -34,9 +34,10 @@
     if ([defaults boolForKey:@"gender"])
         self.pastGames = appDelegate.mPastGames;
     
-    else
+    else{
         self.pastGames = appDelegate.wPastGames;
-    
+        self.wtLabel.textColor = [UIColor clearColor];
+    }
     self.past3Games = [NSArray arrayWithObjects: self.pastGames[[self.pastGames count] -1], self.pastGames[[self.pastGames count] -2], self.pastGames[[self.pastGames count]-3], nil];
     
     [self setPastThreeGames];

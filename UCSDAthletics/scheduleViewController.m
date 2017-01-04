@@ -128,13 +128,13 @@
 -(void) createUpcomingGameTiles {
         for (int i = 0; i < [self.upcomingGames count]; i++){
             UIView *view = [[UIView alloc] initWithFrame: CGRectMake(0, self.y, 320, 150)];
-            view.backgroundColor = [UIColor lightGrayColor];
+            view.backgroundColor = [UIColor colorWithRed:0.02 green:0.16 blue:0.36 alpha:.60];
     
             NSArray * gameDetails = [self getUpcomingGameDetail: i];
             
-            UILabel * opponent = [[UILabel alloc] initWithFrame: CGRectMake(10, 40, 140, 65)];
-            UILabel * ucsd = [[UILabel alloc] initWithFrame: CGRectMake(210, 40, 140, 65)];
-            UILabel *date =[[UILabel alloc] initWithFrame: CGRectMake(10, 100, 140, 65)];
+            UILabel * opponent = [[UILabel alloc] initWithFrame: CGRectMake(10, 45, 140, 65)];
+            UILabel * ucsd = [[UILabel alloc] initWithFrame: CGRectMake(210, 45, 140, 65)];
+            UILabel *date =[[UILabel alloc] initWithFrame: CGRectMake(10, -10, 140, 65)];
             ucsd.text = @"UC San Diego";
             
             
@@ -143,9 +143,9 @@
             opponent.numberOfLines = 2;
             date.text = gameDetails[1];
             
-            ucsd.textColor = [UIColor blackColor];
-            opponent.textColor = [UIColor blackColor];
-            date.textColor = [UIColor blackColor];
+            ucsd.textColor = [UIColor whiteColor];
+            opponent.textColor = [UIColor whiteColor];
+            date.textColor = [UIColor whiteColor];
 
             opponent.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
             ucsd.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];

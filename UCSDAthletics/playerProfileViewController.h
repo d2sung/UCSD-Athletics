@@ -12,6 +12,7 @@
 
 @interface playerProfileViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *wtLabel;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *playerScrollView;
 @property (weak, nonatomic) IBOutlet UIView *playerContentView;
