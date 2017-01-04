@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *storyTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *storyScrollView;
 @property (weak, nonatomic) IBOutlet UIView *storyContentView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 -(void) style;
 -(void) htmlToStoryTextView;

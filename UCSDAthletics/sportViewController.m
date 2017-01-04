@@ -80,29 +80,37 @@
         UIButton *button = self.storyButton[i];
         
         //Set title
-        NSString *title = [item[0] stringByDecodingHTMLEntities];
+        NSString *title = [[item[0] stringByDecodingHTMLEntities]uppercaseString];
+        
         
         
         //Set image
         UIImage * storyImage = item[1];
         [button setBackgroundImage:storyImage forState:UIControlStateNormal];
         
+        
         //Floor Fade
         CAGradientLayer *bottomFade = [CAGradientLayer layer];
-        bottomFade.frame = CGRectMake(0.0, CGRectGetHeight(button.bounds), CGRectGetWidth(button.bounds), -(CGRectGetHeight(button.bounds) / 3.5));
-        bottomFade.startPoint = CGPointMake(0.5, 1.0);
-        bottomFade.endPoint = CGPointMake(0.5, 0.0);
-        bottomFade.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithWhite:0.6f alpha:0.4f] CGColor], (id)[[UIColor colorWithWhite:0.6f alpha:0.5f] CGColor], nil];
+        bottomFade.frame = CGRectMake(0.0, CGRectGetHeight(button.bounds), CGRectGetWidth(button.bounds), -(CGRectGetHeight(button.bounds)));
+        //bottomFade.startPoint = CGPointMake(0.5, 1.0);
+        //bottomFade.endPoint = CGPointMake(0.5, 0.0);
+        //bottomFade.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithWhite:0.6f alpha:0.4f] CGColor], (id)[[UIColor colorWithWhite:0.6f alpha:0.5f] CGColor], nil];
+        
+         bottomFade.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.07 green:0.05 blue:0.05 alpha:.40] CGColor], (id)[[UIColor colorWithRed:0.07 green:0.05 blue:0.05 alpha:.40] CGColor], nil];
+        
         [button.layer insertSublayer:bottomFade atIndex:0];
         
         [button setTitle: title forState: UIControlStateNormal];
-        
+        button.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        button.contentEdgeInsets = UIEdgeInsetsMake(0, 10, -105, 0);
-        button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        button.titleLabel.numberOfLines = 2;
+        button.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 5, 0);
+       button.titleLabel.lineBreakMode = NSLineBreakByClipping;
+        button.titleLabel.numberOfLines = 3;
         button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+       
+        
         
     }
 }

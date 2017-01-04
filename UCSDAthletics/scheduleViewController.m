@@ -64,41 +64,77 @@
         
         NSArray * gameDetails = [self getGameDetails:i];
         
-        UILabel * opponent = [[UILabel alloc] initWithFrame: CGRectMake(10, 35, 140, 65)];
-        UILabel *opponentScore =[[UILabel alloc] initWithFrame: CGRectMake(10, 75, 90, 50)];
-        UILabel * ucsd = [[UILabel alloc] initWithFrame: CGRectMake(210, 35, 140, 65)];
-        UILabel *ucsdScore =[[UILabel alloc] initWithFrame: CGRectMake(294, 75, 90, 50)];
-        UILabel *date =[[UILabel alloc] initWithFrame: CGRectMake(10, -10, 140, 65)];
+        UILabel * away= [[UILabel alloc] initWithFrame: CGRectMake(10, 35, 140, 65)];
+        UILabel * awayScore =[[UILabel alloc] initWithFrame: CGRectMake(50, 75, 90, 50)];
+        UILabel * home = [[UILabel alloc] initWithFrame: CGRectMake(170, 35, 140, 65)];
+        UILabel * homeScore =[[UILabel alloc] initWithFrame: CGRectMake(170, 75, 90, 50)];
+        UILabel * date =[[UILabel alloc] initWithFrame: CGRectMake(10, -10, 140, 65)];
+        UILabel * at = [[UILabel alloc] initWithFrame: CGRectMake(155, 35, 40, 65)];
+        
+        UIImageView * arrow = [[UIImageView alloc] initWithFrame: CGRectMake(290, 10, 24, 24)];
+        arrow.image = [UIImage imageNamed:@"rightArrow"];
+        [view addSubview: arrow];
         
         
-        ucsd.text = @"UC San Diego";
-        opponent.text = gameDetails[0];
-        opponent.lineBreakMode = NSLineBreakByWordWrapping;
-        opponent.numberOfLines = 2;
-        date.text = gameDetails[1];
-        ucsdScore.text = gameDetails[2];
-        opponentScore.text = gameDetails[3];
         
-        ucsd.textColor = [UIColor blackColor];
-        opponent.textColor = [UIColor blackColor];
+        homeScore.textAlignment = NSTextAlignmentRight;
+        home.textAlignment = NSTextAlignmentRight;
+        at.text = @"@";
+        
+        
+        if ([gameDetails[4] isEqualToString:@"<p>at UC San Diego"]){
+            away.text = gameDetails[0];
+            UIImageView * ucsd_logo = [[UIImageView alloc] initWithFrame: CGRectMake(190, 35, 120, 65)];
+            
+            ucsd_logo.image = [UIImage imageNamed:@"ucsd_logo"];
+            [view addSubview: ucsd_logo];
+            home.lineBreakMode = NSLineBreakByWordWrapping;
+            away.numberOfLines = 2;
+            away.lineBreakMode = NSLineBreakByWordWrapping;
+            home.numberOfLines = 2;
+            date.text = gameDetails[1];
+            homeScore.text = gameDetails[2];
+            awayScore.text = gameDetails[3];
+        }
+        
+        else {
+            UIImageView * ucsd_logo = [[UIImageView alloc] initWithFrame: CGRectMake(10, 30, 120, 65)];
+            ucsd_logo.image = [UIImage imageNamed:@"ucsd_logo"];
+            [view addSubview: ucsd_logo];
+            home.text = gameDetails[0];
+            home.lineBreakMode = NSLineBreakByWordWrapping;
+            home.numberOfLines = 2;
+            away.numberOfLines = 2;
+            away.lineBreakMode = NSLineBreakByWordWrapping;
+            date.text = gameDetails[1];
+            awayScore.text = gameDetails[2];
+            homeScore.text = gameDetails[3];
+            
+        }
+        
+        
+        home.textColor = [UIColor blackColor];
+        away.textColor = [UIColor blackColor];
         date.textColor = [UIColor blackColor];
+        at.textColor = [UIColor blackColor];
         
         
-        if ([ucsdScore.text integerValue] > [opponentScore.text integerValue]){
-            ucsdScore.textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];            opponentScore.textColor = [UIColor blackColor];
+        if ([homeScore.text integerValue] > [awayScore.text integerValue]){
+            homeScore.textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];            awayScore.textColor = [UIColor blackColor];
             
         }
         
         else {
-            ucsdScore.textColor = [UIColor blackColor];
-            opponentScore.textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];;
+            homeScore.textColor = [UIColor blackColor];
+            awayScore.textColor = [UIColor colorWithRed:0.96 green:0.72 blue:0 alpha:.75];;
         }
         
         
-        opponent.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
-        ucsd.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
-        opponentScore.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size: 20];
-        ucsdScore.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size: 20];
+        away.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
+        home.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
+        awayScore.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size: 20];
+        homeScore.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size: 20];
+        at.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
         
         
         
@@ -111,12 +147,13 @@
                    action:@selector(pushMyNewViewController:)
          forControlEvents:UIControlEventTouchUpInside];
         
-        [view addSubview: ucsd];
-        [view addSubview: opponent];
-        [view addSubview: opponentScore];
-        [view addSubview: ucsdScore];
+        [view addSubview: home];
+        [view addSubview: away];
+        [view addSubview: awayScore];
+        [view addSubview: homeScore];
         [view addSubview: date];
-
+        [view addSubview: at];
+        
         [self.contentView addSubview: view];
         [self.contentView addSubview: button];
         
@@ -132,29 +169,54 @@
     
             NSArray * gameDetails = [self getUpcomingGameDetail: i];
             
-            UILabel * opponent = [[UILabel alloc] initWithFrame: CGRectMake(10, 45, 140, 65)];
-            UILabel * ucsd = [[UILabel alloc] initWithFrame: CGRectMake(210, 45, 140, 65)];
+            UILabel * away = [[UILabel alloc] initWithFrame: CGRectMake(10, 45, 140, 65)];
+            UILabel * home = [[UILabel alloc] initWithFrame: CGRectMake(170, 45, 140, 65)];
             UILabel *date =[[UILabel alloc] initWithFrame: CGRectMake(10, -10, 140, 65)];
-            ucsd.text = @"UC San Diego";
-            
-            
-            opponent.text = gameDetails[0];
-            opponent.lineBreakMode = NSLineBreakByWordWrapping;
-            opponent.numberOfLines = 2;
-            date.text = gameDetails[1];
-            
-            ucsd.textColor = [UIColor whiteColor];
-            opponent.textColor = [UIColor whiteColor];
-            date.textColor = [UIColor whiteColor];
+            UILabel * at = [[UILabel alloc] initWithFrame: CGRectMake(155, 45, 40, 65)];
+          
+            home.textAlignment = NSTextAlignmentRight;
+            at.text = @"@";
 
-            opponent.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
-            ucsd.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 15];
+            if ([gameDetails[2] isEqualToString:@"<p>at UC San Diego"]){
+                away.text = gameDetails[0];
+                UIImageView * ucsd_logo = [[UIImageView alloc] initWithFrame: CGRectMake(190, 40, 120, 65)];
+                
+                ucsd_logo.image = [UIImage imageNamed:@"ucsd_logo"];
+                [view addSubview: ucsd_logo];
+
+                away.numberOfLines = 2;
+                away.lineBreakMode = NSLineBreakByWordWrapping;
+                date.text = gameDetails[1];
+            
+            }
+            
+            else {
+                UIImageView * ucsd_logo = [[UIImageView alloc] initWithFrame: CGRectMake(10, 40, 120, 65)];
+                ucsd_logo.image = [UIImage imageNamed:@"ucsd_logo"];
+                
+                [view addSubview: ucsd_logo];
+                home.text = gameDetails[0];
+                home.lineBreakMode = NSLineBreakByWordWrapping;
+                home.numberOfLines = 2;
+                
+                date.text = gameDetails[1];
+                
+            }
+
+            
+            home.textColor = [UIColor whiteColor];
+            away.textColor = [UIColor whiteColor];
+            date.textColor = [UIColor whiteColor];
+            at.textColor = [UIColor whiteColor];
+            
+            home.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 17];
+            away.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size: 17];
             [self.contentView addSubview: view];
             
-            [view addSubview: ucsd];
-            [view addSubview: opponent];
+            [view addSubview: home];
+            [view addSubview: away];
             [view addSubview: date];
-            
+            [view addSubview: at];
             self.y = self.y + 151;
         }
 }
@@ -208,7 +270,11 @@
         j++;
     }
     
-    NSArray * retArray = [NSArray arrayWithObjects:opponent, date, tritonScore, opponentScore, nil];
+    NSString *location = self.pastGames[i][1];
+    
+    location = [location substringToIndex:18];
+    
+    NSArray *retArray = @[opponent, date, tritonScore, opponentScore, location, @5 ];
     
     return retArray;
 }
@@ -296,9 +362,12 @@
         j++;
     }
     
+    NSString *location = self.upcomingGames[i][1];
     
-    NSArray * retArray = [NSArray arrayWithObjects:opponent, date, nil];
+    location = [location substringToIndex:18];
     
+    NSArray *retArray = @[opponent, date, location, @3 ];
+
     return retArray;
     
 }
@@ -313,6 +382,10 @@
     
     [self.navigationController pushViewController:nextVC animated:YES];
 }
+
+
+
+
 
     
     

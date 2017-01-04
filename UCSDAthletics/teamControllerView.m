@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "HTMLParser.h"
 #import "HTMLNode.h"
+#import "roster.h"
 
 @implementation teamControllerView
 
@@ -33,12 +34,14 @@
         self.teamLabel.text = @"UC San Diego Men's Basketball";
         self.teamPlayer = appDelegate.menTeamPlayer;
         self.pastGames = appDelegate.mPastGames;
+        self.roster = appDelegate.mBballRoster;
     }
     
     else {
         self.teamLabel.text = @"UC San Diego Women's Basketball";
         self.teamPlayer = appDelegate.womenTeamPlayer;
         self.pastGames = appDelegate.wPastGames;
+        self.roster = appDelegate.wBballRoster;
     }
     
     self.past3Games = [NSArray arrayWithObjects: self.pastGames[[self.pastGames count] -1], self.pastGames[[self.pastGames count] -2], self.pastGames[[self.pastGames count]-3], nil];
@@ -56,7 +59,11 @@
     
     self.threeptLabel.text = [NSString stringWithFormat:@"%.1f", (double)self.teamPlayer.threeFg/(double)self.teamPlayer.gp];
     
+    self.toLabel.text = [NSString stringWithFormat:@"%.1f", (double)self.teamPlayer.to/(double)self.teamPlayer.gp];
+    
     [self setPastThreeGames];
+    
+    [self getTeamLeaders];
     
 }
 
@@ -221,6 +228,109 @@
         [retArray addObject:gameStatsArray];
         
     }
+    return retArray;
+}
+
+-(NSArray*) getTeamLeaders {
+    
+    //Get
+    playerProfile * pointsLeader = self.roster.teamArray[0];
+    playerProfile * rebLeader = [[playerProfile alloc]init];
+    playerProfile * astLeader = [[playerProfile alloc]init];
+    int highestReb = 0;
+    int highestAsst = 0;
+    //Get rebound leader
+    
+    for (playerProfile *player in self.roster.teamArray){
+        
+        if (player.rpg > highestReb){
+            rebLeader = player;
+            highestReb = player.rpg;
+        }
+        
+    }
+    
+    for (playerProfile *player in self.roster.teamArray){
+        
+        if (player.apg > highestAsst){
+            astLeader = player;
+            highestAsst = player.apg;
+        }
+    }
+    
+    NSArray *retArray = @[pointsLeader, rebLeader, astLeader, @3];
+    
+    
+    //Get name string
+    NSString * pointsName= [pointsLeader.fName stringByAppendingString:@" "];
+    pointsName = [pointsName stringByAppendingString:pointsLeader.lName];
+    
+    NSString * rebName = [rebLeader.fName stringByAppendingString:@" "];
+    rebName = [rebName stringByAppendingString:rebLeader.lName];
+    
+    NSString * astName = [astLeader.fName stringByAppendingString:@" "];
+    astName = [astName stringByAppendingString:astLeader.lName];
+    
+    //Get stat string
+    
+    NSString * ptsString = [NSString stringWithFormat: @"%.01f", pointsLeader.ppg];
+    ptsString = [ptsString stringByAppendingString:@" PPG"];
+    
+    NSString * rebString = [NSString stringWithFormat: @"%.01f", rebLeader.rpg];
+    rebString = [rebString stringByAppendingString:@" RPG"];
+    
+    NSString * astString = [NSString stringWithFormat: @"%.01f", astLeader.apg];
+    astString = [astString stringByAppendingString: @" APG"];
+    
+    //Sim stat string
+    NSString * ptsSimStat = [NSString stringWithFormat:@"%.01f", pointsLeader.fgPct * 100];
+    ptsSimStat = [ptsSimStat stringByAppendingString:@" FG%, "];
+    ptsSimStat = [ptsSimStat stringByAppendingString: [NSString stringWithFormat:@"%.01f", pointsLeader.threePct * 100]];
+    ptsSimStat = [ptsSimStat stringByAppendingString:@" 3PT%"];
+    
+    NSString * rebSimStat = [NSString stringWithFormat:@"%.01f", rebLeader.avgMin];
+    rebSimStat = [rebSimStat stringByAppendingString:@" MPG"];
+   
+    NSString * astSimStat = [NSString stringWithFormat:@"%.01f", astLeader.to/ (float) astLeader.gp];
+    astSimStat = [astSimStat stringByAppendingString:@" TOPG"];
+    
+    
+    //Set team leader labels
+    
+    self.pointsLeaderName.text = pointsName;
+    self.ptsLeaderNumber.text = pointsLeader.number;
+    self.ptsLeaderStat.text = ptsString;
+    self.ptsLeaderSimStat.text  = ptsSimStat;
+    
+    
+    self.rebLeaderName.text = rebName;
+    self.rebLeaderNumber.text = rebLeader.number;
+    self.rebLeaderStat.text = rebString;
+    self.rebLeaderSimStat.text = rebSimStat;
+    
+    
+    self.astLeaderName.text = astName;
+    self.astLeaderNumber.text = astLeader.number;
+    self.astLeaderStat.text = astString;
+    self.astLeaderSimStat.text = astSimStat;
+    
+    
+    
+    
+    
+    NSString * ptsFile = [NSString stringWithFormat:@"%@%@", [[pointsLeader.fName substringToIndex:1] lowercaseString], pointsLeader.lName];
+    
+    [self.pointsLeaderImage setImage:[UIImage imageNamed:ptsFile]];
+    
+    NSString * rebFile = [NSString stringWithFormat:@"%@%@", [[rebLeader.fName substringToIndex:1] lowercaseString],rebLeader.lName];
+    
+    [self.rebLeaderImage setImage:[UIImage imageNamed:rebFile]];
+    
+    NSString * astFile = [NSString stringWithFormat:@"%@%@", [[astLeader.fName substringToIndex:1] lowercaseString],astLeader.lName];
+    
+    [self.astLeaderImage setImage:[UIImage imageNamed:astFile]];
+    
+    
     return retArray;
 }
 

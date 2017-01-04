@@ -28,6 +28,13 @@
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.numberOfLines = 5;
     
+                            
+    NSDate *pubDate = self.storyArray[3];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"MM-dd-YYYY"];
+    NSString * dateString = [df stringFromDate:pubDate];
+    
+    self.dateLabel.text = dateString;
     //Set image
     [self.storyImageView setImage: self.storyArray[1]];
     

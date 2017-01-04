@@ -96,6 +96,8 @@
         //Get title (NSString
         NSString *title = item.title ? [item.title stringByDecodingHTMLEntities]: @"[No Title]";
         
+        NSDate *pubDate = item.date;
+        
         //Get image (UIImage)
         NSArray * enclosureArray = item.enclosures;
         NSDictionary *enclosureDict = enclosureArray[0];
@@ -106,7 +108,7 @@
         //Get link (NSURL)
         NSURL * linkURL = [NSURL URLWithString:item.link];
         
-        NSArray *itemEntry = [NSArray arrayWithObjects: title, storyImage, linkURL, nil];
+        NSArray *itemEntry = [NSArray arrayWithObjects: title, storyImage, linkURL, pubDate, nil];
         [self.menRSSArray addObject:itemEntry];
     }
     

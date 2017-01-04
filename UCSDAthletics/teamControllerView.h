@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "playerProfile.h"
+#import "roster.h"
 
 @interface teamControllerView : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rebLabel;
 @property (weak, nonatomic) IBOutlet UILabel *assistsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *threeptLabel;
+@property (weak, nonatomic) IBOutlet UILabel *toLabel;
 
 @property playerProfile * teamPlayer;
 
@@ -46,17 +48,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *ptsLeaderSimStat;
 
 
-@property (weak, nonatomic) IBOutlet UIView *rebLeaderImage;
+@property (weak, nonatomic) IBOutlet UIImageView *rebLeaderImage;
 @property (weak, nonatomic) IBOutlet UILabel *rebLeaderNumber;
 @property (weak, nonatomic) IBOutlet UILabel *rebLeaderName;
 @property (weak, nonatomic) IBOutlet UILabel *rebLeaderStat;
-@property (weak, nonatomic) IBOutlet UILabel *rebLeaderSimilarStat;
+@property (weak, nonatomic) IBOutlet UILabel *rebLeaderSimStat;
 
 @property (weak, nonatomic) IBOutlet UIImageView *astLeaderImage;
 @property (weak, nonatomic) IBOutlet UILabel *astLeaderNumber;
 @property (weak, nonatomic) IBOutlet UILabel *astLeaderName;
 @property (weak, nonatomic) IBOutlet UILabel *astLeaderStat;
 @property (weak, nonatomic) IBOutlet UILabel *astLeaderSimStat;
+
+//Leaders
+@property roster *roster;
 
 
 @end
