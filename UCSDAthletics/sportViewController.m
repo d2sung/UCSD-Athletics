@@ -129,6 +129,9 @@
 
 }
 
+- (IBAction)moreStoriesButtonPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://www.ucsdtritons.com"]];
+}
 
 /* prepareForSegue:
  * Correspondingly sets the storyView's storyArray
