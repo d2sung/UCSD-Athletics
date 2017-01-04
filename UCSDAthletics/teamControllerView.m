@@ -15,6 +15,7 @@
 @implementation teamControllerView
 
 -(void)viewDidLoad{
+    [super viewDidLoad];
     UIImage *image = [UIImage imageNamed: @"trident_logo"];
     [self.logoImageView setImage:image];
     
@@ -55,13 +56,25 @@
     
     self.threeptLabel.text = [NSString stringWithFormat:@"%.1f", (double)self.teamPlayer.threeFg/(double)self.teamPlayer.gp];
     
-    //[self setPastThreeGames];
-
-    
-    
-    
+    [self setPastThreeGames];
     
 }
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+  
+
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+   
+    
+}
+
 
 
 -(void) setPastThreeGames {
@@ -69,8 +82,6 @@
     
     int i = 0;
     for (UILabel * gameLabel in self.gameLabels){
-        gameLabel.text = gameArray[i];
-        gameLabel.text = gameArray[i];
         gameLabel.text = gameArray[i];
         i++;
     }
@@ -82,6 +93,7 @@
         UILabel *label = self.game1StatLabel[x];
         label.text = statsArray[0][x];
     }
+    
     
     for (int x = 0; x < [statsArray[0] count]; x++){
         UILabel *label = self.game2StatLabel[x];
@@ -159,10 +171,16 @@
 -(NSArray *) getPlayerStats {
     
     NSMutableArray * retArray = [[NSMutableArray alloc]init];
+    Boolean atHome;
     
     for (int i = 0; i < [self.past3Games count]; i++){
         
         NSString * url = [self getStatsURL:i];
+        
+        if ([self.pastGames[[self.pastGames count] - (i+1)][1] isEqualToString: @"<p>at UC San Di"])
+            atHome = true;
+        else
+            atHome = false;
         
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
         
@@ -183,16 +201,20 @@
         
         
         
-        for (int i = 0; i < [inputNodes count]; i++) {
+        for (int x = 0; x < [inputNodes count]; x++) {
             
-            HTMLNode *tdNode = inputNodes[i];
+            HTMLNode *tdNode = inputNodes[x];
             
             //If the tdNode is the team total
             if ([[tdNode allContents] isEqualToString:@"Totals..............\u00a0"]){
-                NSLog(@"gets here");
-                gameStatsArray = [NSArray arrayWithObjects: [inputNodes[i+13]allContents], [inputNodes[i+8]allContents], [inputNodes[i+2]allContents], [inputNodes[i+3]allContents], [inputNodes[i+4]allContents], [inputNodes[i+6]allContents], [inputNodes[i+9]allContents], [inputNodes[i+12]allContents],[inputNodes[i+11]allContents], [inputNodes[i+10]allContents], [inputNodes[i+7]allContents], nil];
-                break;
                 
+                gameStatsArray = [NSArray arrayWithObjects:[inputNodes[x+8]allContents], [inputNodes[x+6]allContents], [inputNodes[x+9]allContents], [inputNodes[x+2]allContents], [inputNodes[x+4]allContents], [inputNodes[x+3]allContents], [inputNodes[x+12]allContents],[inputNodes[x+11]allContents], [inputNodes[x+10]allContents], [inputNodes[x+7]allContents], nil];
+            
+                if (atHome == false)
+                    atHome = true;
+                
+                else
+                    break;
             }
         }
         

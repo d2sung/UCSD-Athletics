@@ -190,6 +190,9 @@
         //Get Description
         
         NSString * description = [item summary];
+       
+        
+        
         
         
         NSArray *itemEntry = [NSArray arrayWithObjects: title, description, nil];
