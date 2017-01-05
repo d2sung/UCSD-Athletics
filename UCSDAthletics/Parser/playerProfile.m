@@ -20,7 +20,21 @@
 }
 
 -(NSComparisonResult) compare: (playerProfile *)  otherPlayer{
-    return [self.lName compare:otherPlayer.lName];
+    int value1 = [self.number intValue];
+    int value2 = [otherPlayer.number intValue];
+    
+    
+    if (value1 < value2){
+        return (NSComparisonResult)NSOrderedAscending;
+    }
+    
+    else if (value1 > value2){
+        return (NSComparisonResult)NSOrderedDescending;
+    }
+    
+    else {
+        return (NSComparisonResult)NSOrderedSame;
+    }
 }
 
 

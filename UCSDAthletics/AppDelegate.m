@@ -33,7 +33,7 @@
     self.womenTeamPlayer = self.wBballRoster.teamPlayer;
     self.menTeamPlayer = self.mBballRoster.teamPlayer;
     
-    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ucsd_logo"] forBarMetrics:UIBarMetricsDefault];
+    playerProfile * moore = self.wBballRoster.teamArray[4];
 
     
     
@@ -48,11 +48,6 @@
     [self getPastGames];
     [self getUpcomingGames];
     
-    //NSLog(@"%d", [self.allGames count]);
-    
-    for (NSArray* array in self.wUpcomingGames){
-        NSLog(@"%@: %@", array[0], array[1]);
-    }
     
     return YES;
 }

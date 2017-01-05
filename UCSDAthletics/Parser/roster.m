@@ -187,8 +187,6 @@
         idx = [self iterateThroughCommas:statSheet: idx];
     self.teamPlayer.apg = [parser parseIntEntry:statSheet :idx];
         idx = [self iterateToNextLine:statSheet :idx];
-    
-    //[self.teamArray addObject:addingPlayer];
 }
 
 -(int) iterateThroughCommas: (NSString*)statSheet :(int) curIndex{
@@ -233,15 +231,13 @@
     if (isMen)
         bidx = 80;
     else
-        bidx = 71;
-    
+        bidx = 72;
     /******************Parse through bio***********************/
     for (int playerIdx = 0; playerIdx < playersCount; playerIdx++){
         playerProfile *addingPlayer = [[playerProfile alloc] init];
         
         //Get number
         addingPlayer.number = [bParser parseStringEntry:bioSheet :bidx];
-        //NSLog(@"adding number in bio: %@", addingPlayer.number);
         bidx = [self iterateThroughCommas:bioSheet: bidx];
         
         //First, skip through name
@@ -251,7 +247,7 @@
         bidx = [self iterateThroughCommas:bioSheet: bidx];
     
         addingPlayer.height = [bParser parseStringEntry:bioSheet :bidx];
-    
+        
         //Women does not have weight
         if(isMen){
             bidx = [self iterateThroughCommas:bioSheet: bidx];

@@ -16,6 +16,7 @@
     NSInteger selectedIndex;
 }
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *nameNumberControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewObject;
 -(void) setupStyle;
 

@@ -29,18 +29,19 @@
     
     //Set tabbar title
     if ([defaults boolForKey:@"gender"]){
-        [self.tabBarController setTitle:@"Men's Basketball"];
         self -> teamTable = appDelegate.mBballRoster.teamArray;
     }
     
     else {
-        [self.tabBarController setTitle:@"Women's Basketball"];
         self -> teamTable = appDelegate.wBballRoster.teamArray;
     }
     
-    //Sort array alphabetically
+
+    //Sort by number
     self -> teamTable = [self -> teamTable sortedArrayUsingSelector:@selector(compare:)];
+
     
+ 
     //Set Delegates
     self.tableViewObject.dataSource = self;
     self.tableViewObject.delegate = self;
@@ -67,9 +68,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
-    
+
     playerProfile *player = [self->teamTable objectAtIndex: indexPath.row];
     
     //Set label of cell to player
@@ -77,9 +78,11 @@
         NSString *comma = @", ";
         NSString *fullName = [ player.lName stringByAppendingString: comma];
         fullName = [fullName stringByAppendingString: player.fName];
+    
         cell.textLabel.text = fullName;
         cell.textLabel.textColor = [UIColor blackColor];
-        
+        cell.detailTextLabel.text = player.number;
+       
         if(indexPath.row % 2 == 0)
             cell.backgroundColor = [UIColor whiteColor];
         else
@@ -107,9 +110,10 @@
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     playerProfileViewController * playerController = segue.destinationViewController;
-    
     playerController.player = [self -> teamTable objectAtIndex: selectedIndex];
     
+    
+   
 }
 
 -(void) setupStyle {

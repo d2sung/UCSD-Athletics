@@ -38,11 +38,13 @@
         self.pastGames = appDelegate.wPastGames;
         self.wtLabel.textColor = [UIColor clearColor];
     }
+    
     self.past3Games = [NSArray arrayWithObjects: self.pastGames[[self.pastGames count] -1], self.pastGames[[self.pastGames count] -2], self.pastGames[[self.pastGames count]-3], nil];
     
     [self setPastThreeGames];
+    
     [self.navigationItem setTitle:@" "];
-  
+    
     
     
 }
@@ -93,6 +95,7 @@
 }
 
 -(void) setPastThreeGames {
+
     NSArray * gameArray = [self getTitleforLastThreeGames];
     
     self.gameLabel1.text = gameArray[0];
@@ -102,22 +105,27 @@
     NSArray *statsArray = [self getPlayerStats];
     //Set past three game labels
     
-    
-    for (int x = 0; x < [statsArray[0] count]; x++){
-        UILabel *label = self.statsLabel1[x];
-        label.text = statsArray[0][x];
+    if ([statsArray[0] count] != 0){
+        for (int x = 0; x < [statsArray[0] count]; x++){
+            UILabel *label = self.statsLabel1[x];
+            label.text = statsArray[0][x];
+        }
     }
     
-    for (int x = 0; x < [statsArray[0] count]; x++){
-        UILabel *label = self.statsLabel2[x];
-        label.text = statsArray[1][x];
+    
+    if ([statsArray[1] count] != 0){
+         for (int x = 0; x < [statsArray[0] count]; x++){
+             UILabel *label = self.statsLabel2[x];
+             label.text = statsArray[1][x];
+         }
     }
     
-    for (int x = 0; x < [statsArray[0] count]; x++){
-        UILabel *label = self.statsLabel3[x];
-        label.text = statsArray[2][x];
-    }
-
+     if ([statsArray[2] count] != 0){
+         for (int x = 0; x < [statsArray[0] count]; x++){
+             UILabel *label = self.statsLabel3[x];
+             label.text = statsArray[2][x];
+         }
+     }
 }
 
 /* setStats:
@@ -191,6 +199,7 @@
         NSString * gameTitle = titleArray[1];
         
         [retArray addObject: gameTitle];
+
       }
     
     return retArray;

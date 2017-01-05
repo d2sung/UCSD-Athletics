@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8CE6BD711E0B59F1000D0CCE"
-               BuildableName = "UCSDAthletics.app"
+               BuildableName = "UCSD BBALL.app"
                BlueprintName = "UCSDAthletics"
                ReferencedContainer = "container:UCSDAthletics.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8CE6BD711E0B59F1000D0CCE"
-            BuildableName = "UCSDAthletics.app"
+            BuildableName = "UCSD BBALL.app"
             BlueprintName = "UCSDAthletics"
             ReferencedContainer = "container:UCSDAthletics.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8CE6BD711E0B59F1000D0CCE"
-            BuildableName = "UCSDAthletics.app"
+            BuildableName = "UCSD BBALL.app"
             BlueprintName = "UCSDAthletics"
             ReferencedContainer = "container:UCSDAthletics.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8CE6BD711E0B59F1000D0CCE"
-            BuildableName = "UCSDAthletics.app"
+            BuildableName = "UCSD BBALL.app"
             BlueprintName = "UCSDAthletics"
             ReferencedContainer = "container:UCSDAthletics.xcodeproj">
          </BuildableReference>
