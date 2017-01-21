@@ -10,5 +10,6 @@
 
 @interface standingsViewController : UIViewController
     @property (strong, nonatomic) IBOutlet UIWebView * webView;
+    @property UIActivityIndicatorView *activityView;
 
 @end

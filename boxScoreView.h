@@ -10,5 +10,8 @@
 
 @interface boxScoreView : UIViewController
 @property (weak, nonatomic) IBOutlet UIWebView *boxScoreWebView;
+@property UIActivityIndicatorView *activityView;
+
+
 
 @end

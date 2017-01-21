@@ -1,4 +1,5 @@
 
+<img src='GIFWalkthrough/AppLogo.png' title='Video Walkthrough of stories and news' width='' alt='Video Walkthrough' />
 
 ## Front Page
 
@@ -32,7 +33,12 @@ Users can press on past games to access the team stats. They can also access the
 ## Roster and Player Profile
 <img src='GIFWalkthrough/roster.gif' title='Video Walkthrough of roster and playerprofile' width='' alt='Video Walkthrough' />
 
-When users press on a player cell, the app will show the player profile, which contains stats and vital informations.
+When users press on a player cell, the app will show the player profile, which contains stats and vital informations.* 
+
+
+*Background color of player profile not correctly captured by software. Following image shows what it actually looks like.
+
+<img src='GIFWalkthrough/playerProfile.png' title='playerprofile' width='' alt='Video Walkthrough' />
 
 ***
 
@@ -47,6 +53,11 @@ Standings of team in the CCAA.
 <img src='GIFWalkthrough/team.gif' title='Video Walkthrough of team stats' width='' alt='Video Walkthrough' />
 
 Overall team stats, past three games and team leaders. 
+
+***
+
+##App Icon
+<img src='GIFWalkthrough/appIcon.png' title='Video Walkthrough of standings' width='' alt='Video Walkthrough' />
 
 
 

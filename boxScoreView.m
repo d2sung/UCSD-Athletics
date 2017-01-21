@@ -17,7 +17,20 @@
     
     NSURLRequest *requestURL = [NSURLRequest requestWithURL: [defaults URLForKey:@"gameURL"]];
     
+    self.activityView=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    self.activityView.center = CGPointMake(self.boxScoreWebView.frame.size.width/ 2.0, self.boxScoreWebView.frame.size.height/2.0);
+    [self.boxScoreWebView addSubview:self.activityView];
+    [self.activityView startAnimating];
+    
     [self.boxScoreWebView loadRequest:requestURL];
+    
+    self.boxScoreWebView.delegate = self;
 }
+
+-(void)webViewDidFinishLoad:(UIWebView *) webView{
+    [self.activityView setHidden:YES];
+}
+
 
 @end
