@@ -19,14 +19,14 @@ The six most recent stories from the athletics website are shown on the news tab
 ## Schedule
 <img src='GIFWalkthrough/schedules.gif' title='Video Walkthrough of schedule, boxscore and game stats' width='' alt='Video Walkthrough' />
 
-Past games of schedules are colored in white while upcoming games are colored in blue. 
+Past games are colored in white while upcoming games are colored in blue. 
 
 ***
 
 ## Previous Games
 <img src='GIFWalkthrough/boxscores.gif' title='Video Walkthrough of schedule, boxscore and game stats' width='' alt='Video Walkthrough' />
 
-Users can press on past games to access the team stats. They can also access the boxscore page for more detailed stats. 
+Users can press on past games to access the game stats. They can also access the boxscore page for more player stats and play-by-play. 
 
 ***
 
@@ -45,14 +45,14 @@ When users press on a player cell, the app will show the player profile, which c
 ## Standings
 <img src='GIFWalkthrough/standings.gif' title='Video Walkthrough of standings' width='' alt='Video Walkthrough' />
 
-Standings of team in the CCAA.
+Standings of teams in the CCAA from www.goccaa.org.
 
 ***
 
 ## Team Stats
 <img src='GIFWalkthrough/team.gif' title='Video Walkthrough of team stats' width='' alt='Video Walkthrough' />
 
-Overall team stats, past three games and team leaders. 
+Overall team stats, stats from the past three games and team leaders. 
 
 ***
 
