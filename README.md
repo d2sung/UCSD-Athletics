@@ -1,4 +1,4 @@
-
+# danielsung94@gmail.com
 <img src='GIFWalkthrough/AppLogo.png' title='Video Walkthrough of stories and news' width='' alt='Video Walkthrough' />
 
 ## Front Page
