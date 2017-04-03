@@ -1,4 +1,4 @@
-[Check it out on the App Store](https://itunes.apple.com/us/app/ucsd-basketball/id1200178740?mt=8)
+##[Check it out on the App Store](https://itunes.apple.com/us/app/ucsd-basketball/id1200178740?mt=8)
 <img src='GIFWalkthrough/AppLogo.png' title='Video Walkthrough of stories and news' width='' alt='Video Walkthrough' />
 
 ## Front Page
