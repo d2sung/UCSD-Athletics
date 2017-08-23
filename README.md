@@ -66,10 +66,6 @@ Overall team stats, stats from the past three games and team leaders.
 
 ***
 
-## App Icon
-<img src='GIFWalkthrough/appIcon.png
-' title='Video Walkthrough of standings' width='' alt='Video Walkthrough' />
-
 
 
 
